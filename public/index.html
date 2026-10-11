@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrustGuard Digital — Online Reputation & Digital Protection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0B0C'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-weight='800' font-size='15' fill='%23F4C22B' text-anchor='middle'%3ETG%3C/text%3E%3C/svg%3E">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --black:#0B0B0C;
+  --charcoal:#17171A;
+  --yellow:#F4C22B;
+  --yellow-deep:#D9A916;
+  --white:#FFFFFF;
+  --paper:#F7F6F3;
+  --line:#E7E5E0;
+  --gray:#6E6D68;
+  --gray-dark:#3A3A38;
+  --radius:10px;
+  --radius-sm:6px;
+  --disp:'Plus Jakarta Sans',sans-serif;
+  --body:'Inter',sans-serif;
+  --mono:'Inter',sans-serif;
+  --maxw:1240px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --sp-1:8px;--sp-2:16px;--sp-3:24px;--sp-4:32px;--sp-5:48px;--sp-6:64px;--sp-7:80px;--sp-8:96px;--sp-9:120px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{animation-duration:.001ms !important;transition-duration:.001ms !important;}}
+body{
+  font-family:var(--body);
+  color:var(--black);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+input,textarea,select{font-family:inherit;font-size:16px;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+@media(min-width:900px){.wrap{padding:0 40px;}}
+
+h1,h2,h3,h4{font-family:var(--disp);font-weight:700;letter-spacing:-0.015em;line-height:1.15;color:var(--black);}
+.eyebrow{
+  font-family:var(--mono);font-weight:600;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gray-dark);display:flex;align-items:center;gap:10px;margin-bottom:var(--sp-2);
+}
+.eyebrow::before{content:'';width:16px;height:2px;background:var(--yellow);display:inline-block;flex-shrink:0;}
+.section{padding:var(--sp-8) 0;}
+@media(max-width:640px){.section{padding:var(--sp-6) 0;}}
+.section-head{max-width:680px;margin-bottom:var(--sp-5);}
+.section-head h2{font-size:clamp(28px,4vw,50px);}
+.section-head p{color:var(--gray-dark);font-size:17px;line-height:1.65;margin-top:var(--sp-2);max-width:640px;}
+.section.dark{background:var(--black);color:var(--white);}
+
+@media (max-width: 767px){
+  .wrap{padding:0 18px;}
+  .eyebrow{font-size:10.5px;letter-spacing:.12em;gap:8px;}
+  .eyebrow::before{width:14px;}
+  .section-head{margin-bottom:28px;}
+  .section-head h2{font-size:clamp(30px,8vw,42px);}
+  .section-head p{font-size:15.5px;}
+  .btn{min-height:48px;}
+  .navrow{height:72px;gap:12px;padding:0 16px;}
+  .logo{font-size:17px;gap:8px;}
+  .logo .mark{width:32px;height:32px;font-size:12px;}
+  .nav-cta{padding:0 16px !important;}
+  .hero{padding-top:28px;}
+  .hero-grid{gap:28px;}
+  .hero h1{font-size:clamp(46px,16vw,58px);line-height:.9;max-width:320px;}
+  .hero-sub{font-size:15.5px;max-width:100%;}
+  .hero-actions{flex-direction:column;align-items:stretch;}
+  .hero-actions .btn{width:100%;}
+  .hero-trust{gap:8px;}
+  .hero-trust span{padding:7px 10px;line-height:1.2;}
+  .hero-visual{max-width:320px;}
+  .card{padding:22px 18px;}
+  .protect-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .faq-q{font-size:15px;}
+  .contact-wrap{gap:24px;}
+  .form-grid{grid-template-columns:1fr;}
+  .field.full, .field{grid-column:auto;}
+  .foot-top{grid-template-columns:1fr;}
+}
+
+@media (max-width: 480px){
+  .navrow{height:68px;gap:8px;padding:0 12px;}
+  .logo{font-size:17px;gap:8px;}
+  .logo .mark{width:28px;height:28px;font-size:12px;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+  .nav-cta{padding:0 12px !important;min-height:44px !important;}
+  .hamburger{width:32px;height:32px;gap:4px;}
+  .hamburger span{width:18px;height:1.5px;}
+  .mobile-menu{padding:20px 18px 96px;top:68px;}
+  .mobile-menu a{font-size:16px;padding:12px 10px;}
+  .hero{padding-bottom:28px;}
+  .hero h1{font-size:clamp(42px,18vw,56px);max-width:280px;}
+  .hero-sub{font-size:15px;}
+  .hero-actions .btn{padding:0 18px;}
+
+  .case-card{padding:22px 18px;}
+  .team-body{padding:18px;}
+  .admin-login-card,.login-card{margin:56px auto 24px;}
+}
+.section.dark h2,.section.dark h3,.section.dark h4{color:var(--white);}
+.section.paper{background:var(--paper);}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:50px;padding:0 26px;font-size:15px;font-weight:600;font-family:var(--body);border-radius:var(--radius);
+  transition:transform .2s var(--ease), background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease);
+  white-space:nowrap;letter-spacing:-0.005em;
+}
+.btn-primary{background:var(--yellow);color:var(--black);border:1px solid var(--yellow);}
+.btn-primary:hover{background:var(--yellow-deep);border-color:var(--yellow-deep);transform:translateY(-3px);box-shadow:0 12px 28px rgba(244,194,43,.32);}
+.btn-primary:active{transform:translateY(-1px);}
+.btn-dark{background:var(--black);color:var(--white);border:1px solid var(--black);}
+.btn-dark:hover{background:var(--charcoal);transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.2);}
+.btn-dark:active{transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--black);border:1px solid var(--black);}
+.btn-outline:hover{background:var(--black);color:var(--white);}
+.nav-cta.btn-primary{
+  padding:0 28px;min-height:48px;font-size:14px;letter-spacing:-0.005em;
+  box-shadow:0 4px 16px rgba(244,194,43,.2);
+}
+.nav-cta.btn-primary:hover{
+  box-shadow:0 8px 24px rgba(244,194,43,.35);
+}
+.btn-outline-light{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.4);}
+.btn-outline-light:hover{border-color:var(--yellow);color:var(--yellow);}
+.btn:focus-visible{outline:2px solid var(--yellow-deep);outline-offset:3px;}
+
+/* ============ NAV ============ */
+header{
+  position:sticky;top:0;z-index:200;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(0,0,0,.04);transition:all .3s var(--ease);
+}
+header.scrolled{
+  background:rgba(255,255,255,.98);
+  border-bottom-color:rgba(0,0,0,.08);
+  box-shadow:0 8px 32px rgba(0,0,0,.06);
+}
+.navrow{
+  display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px;
+  padding:0 var(--sp-3);
+}
+.logo{
+  display:flex;align-items:center;gap:12px;font-family:var(--disp);font-weight:800;font-size:19px;
+  letter-spacing:-0.015em;white-space:nowrap;flex-shrink:0;color:var(--black);
+}
+.logo .mark{
+  width:36px;height:36px;background:var(--black);border-radius:10px;display:flex;
+  align-items:center;justify-content:center;flex-shrink:0;font-family:var(--disp);font-weight:800;
+  font-size:14px;color:var(--yellow);letter-spacing:0;box-shadow:0 4px 16px rgba(0,0,0,.12);
+  transition:transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.logo .mark:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(244,194,43,.25);}
+.logo .mark svg{display:none;}
+.navlinks{
+  display:none;align-items:center;justify-content:center;gap:32px;font-size:14px;font-weight:600;
+  white-space:nowrap;flex:1;min-width:0;letter-spacing:-0.005em;
+}
+.navlinks a{
+  position:relative;padding:6px 8px;color:var(--gray-dark);transition:color .25s var(--ease);
+  display:inline-block;white-space:nowrap;border-radius:6px;
+}
+.navlinks a:hover{color:var(--black);background:rgba(244,194,43,.08);}
+.navlinks a::after{
+  content:'';position:absolute;left:8px;bottom:0;width:0;height:2.5px;background:var(--yellow);
+  transition:width .3s var(--ease);border-radius:2px;
+}
+.navlinks a:hover::after{width:calc(100% - 16px);}
+@media(min-width:980px){.navlinks{display:flex;}}
+.nav-cta{display:none;white-space:nowrap;flex-shrink:0;}
+@media(min-width:980px){.nav-cta{display:inline-flex;}}
+.hamburger{
+  display:flex;flex-direction:column;gap:6px;width:36px;height:36px;align-items:center;
+  justify-content:center;flex-shrink:0;border-radius:8px;padding:4px;
+  transition:background .2s var(--ease);
+}
+.hamburger:hover{background:rgba(0,0,0,.04);}
+@media(min-width:980px){.hamburger{display:none;}}
+.hamburger span{
+  width:20px;height:2px;background:var(--black);transition:transform .3s var(--ease), opacity .3s;
+  border-radius:1px;
+}
+.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+
+.mobile-menu{
+  position:fixed;inset:0;top:80px;background:var(--white);z-index:190;
+  transform:translateX(100%);transition:transform .32s var(--ease);
+  overflow-y:auto;padding:28px 24px 100px;border-left:1px solid var(--line);
+}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu a{
+  display:block;font-family:var(--disp);font-size:18px;font-weight:600;padding:14px 12px;
+  margin-bottom:8px;border-radius:8px;color:var(--gray-dark);transition:all .2s var(--ease);
+}
+.mobile-menu a:hover{color:var(--black);background:rgba(244,194,43,.08);}
+.mobile-menu .btn{margin-top:24px;width:100%;}
+
+
+
+/* ============ HERO ============ */
+.hero{padding:var(--sp-6) 0 var(--sp-5);position:relative;background:var(--paper);overflow:hidden;}
+@media(min-width:900px){.hero{padding:var(--sp-8) 0 var(--sp-7);}}
+.hero-grid{display:grid;gap:var(--sp-5);align-items:center;}
+@media(min-width:980px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:var(--sp-6);}}
+.hero h1{font-size:clamp(34px,6.2vw,72px);font-weight:800;max-width:640px;line-height:.92;}
+.hero-sub{font-size:17.5px;line-height:1.65;color:var(--gray-dark);margin-top:var(--sp-3);max-width:520px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:var(--sp-2);margin-top:var(--sp-4);}
+.hero-trust{margin-top:var(--sp-5);display:flex;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-weight:600;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-dark);}
+.hero-trust span{padding:7px 13px;border:1px solid var(--line);border-radius:20px;background:var(--white);}
+
+.hero-visual{position:relative;aspect-ratio:1/1;max-width:440px;justify-self:center;width:100%;}
+@media(max-width:640px){.hero-visual{max-width:300px;}}
+.hv-panel{position:absolute;inset:0;background:linear-gradient(180deg,#f8f7f4 0%, #f1f0ee 100%);border-radius:20px;overflow:hidden;box-shadow:0 22px 48px rgba(11,18,30,.08), inset 0 0 0 1px rgba(15,21,33,.05);}
+.hero-gif{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:12px;filter:drop-shadow(0 18px 24px rgba(17,24,39,.08));background:linear-gradient(180deg,#f8f7f4,#f2f0eb);}
+.hv-grid{position:absolute;inset:-28px;opacity:.22;background-image:linear-gradient(rgba(244,194,43,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(244,194,43,.14) 1px,transparent 1px);background-size:28px 28px;animation:gridDrift 7s linear infinite;}
+@keyframes gridDrift{0%{background-position:0 0;}50%{background-position:14px 8px;}100%{background-position:28px 0;}}
+.hv-network{position:absolute;inset:0;z-index:1;}
+.hv-network svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
+.hv-link{fill:none;stroke:rgba(244,194,43,.42);stroke-width:1;stroke-dasharray:5 8;animation:linkFlow 7s linear infinite;}
+.hv-link:nth-child(2){animation-delay:-1.4s;}.hv-link:nth-child(3){animation-delay:-2.8s;}.hv-link:nth-child(4){animation-delay:-4.2s;}.hv-link:nth-child(5){animation-delay:-5.6s;}
+@keyframes linkFlow{from{stroke-dashoffset:0;opacity:.35;}50%{opacity:.8;}to{stroke-dashoffset:-52;opacity:.35;}}
+.hv-node{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 5px rgba(244,194,43,.11),0 0 16px rgba(244,194,43,.8);animation:nodeFloat 7s ease-in-out infinite;z-index:2;}
+.hv-node::after{content:'';position:absolute;inset:-5px;border:1px solid rgba(244,194,43,.3);border-radius:50%;animation:nodeRing 2.8s ease-out infinite;}
+.hv-node.n1{top:21%;left:25%;}.hv-node.n2{top:28%;right:19%;animation-delay:-1.3s;}.hv-node.n3{bottom:23%;left:22%;animation-delay:-2.6s;}.hv-node.n4{bottom:27%;right:25%;animation-delay:-4s;}.hv-node.n5{top:53%;right:10%;animation-delay:-5.3s;}
+.hv-node.threat{background:#D95C4A;box-shadow:0 0 0 5px rgba(217,92,74,.12),0 0 18px rgba(217,92,74,.75);animation:threatSecure 7s ease-in-out infinite;}
+@keyframes nodeFloat{0%,100%{transform:translate(0,0);opacity:.65;}25%{transform:translate(5px,-7px);opacity:1;}60%{transform:translate(-4px,4px);opacity:.85;}}
+@keyframes nodeRing{0%{transform:scale(.65);opacity:.8;}100%{transform:scale(1.8);opacity:0;}}
+@keyframes threatSecure{0%,40%{background:#D95C4A;box-shadow:0 0 0 5px rgba(217,92,74,.12),0 0 18px rgba(217,92,74,.75);}48%{background:#D95C4A;box-shadow:0 0 0 8px rgba(217,92,74,.2),0 0 24px rgba(217,92,74,1);}58%,100%{background:#55B878;box-shadow:0 0 0 5px rgba(85,184,120,.12),0 0 18px rgba(85,184,120,.7);}}
+.hv-shield{position:absolute;top:50%;left:50%;width:27%;height:27%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;color:var(--yellow);filter:drop-shadow(0 0 11px rgba(244,194,43,.4));animation:shieldPulse 3.5s ease-in-out infinite;z-index:3;}
+.hv-shield svg{width:72%;height:72%;fill:rgba(244,194,43,.1);stroke:currentColor;stroke-width:1.4;}
+@keyframes shieldPulse{0%,100%{filter:drop-shadow(0 0 8px rgba(244,194,43,.3));transform:translate(-50%,-50%) scale(.98);}50%{filter:drop-shadow(0 0 22px rgba(244,194,43,.75));transform:translate(-50%,-50%) scale(1.04);}}
+.hv-pulse{position:absolute;left:50%;top:50%;width:5px;height:5px;border-radius:50%;background:var(--yellow);box-shadow:0 0 12px var(--yellow);z-index:2;animation:pulseTravel 7s ease-in-out infinite;}
+@keyframes pulseTravel{0%,42%,100%{opacity:0;transform:translate(-50%,-50%);}48%{opacity:1;}58%{opacity:1;transform:translate(95px,-72px);}65%{opacity:0;transform:translate(95px,-72px);}}
+.hv-scan{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(244,194,43,.7),transparent);animation:scan 7s ease-in-out infinite;opacity:.45;z-index:4;}
+@keyframes scan{0%,100%{top:10%;opacity:0;}25%{opacity:.4;}50%{top:90%;opacity:.2;}75%{opacity:.4;}}
+.hv-panel-label{position:absolute;z-index:5;padding:7px 10px;border:1px solid rgba(244,194,43,.24);border-radius:7px;background:rgba(10,25,42,.62);backdrop-filter:blur(8px);color:#D8E2ED;font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.08em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 5px 16px rgba(0,0,0,.15);opacity:0;animation:panelReveal 7s ease-in-out infinite;}
+.hv-panel-label::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--yellow);margin:0 6px 1px 0;box-shadow:0 0 7px var(--yellow);}
+.hv-panel-label.p1{top:9%;left:8%;animation-delay:0s;}.hv-panel-label.p2{top:12%;right:5%;animation-delay:1.1s;}.hv-panel-label.p3{bottom:11%;left:5%;animation-delay:2.2s;}.hv-panel-label.p4{bottom:9%;right:6%;animation-delay:3.3s;}.hv-panel-label.p5{top:45%;right:4%;animation-delay:4.4s;}
+@keyframes panelReveal{0%,8%{opacity:0;transform:translateY(10px);}16%,72%{opacity:1;transform:translateY(0);}82%,100%{opacity:0;transform:translateY(-5px);}}
+
+/* ============ CARDS shared ============ */
+.grid{display:grid;gap:18px;}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(0,0,0,.06);border-color:#DCD9D2;}
+.card .icon{width:40px;height:40px;border-radius:8px;background:var(--black);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.card .icon svg{width:20px;height:20px;stroke:var(--yellow);}
+.card h4{font-size:17px;margin-bottom:8px;}
+.card p{font-size:14.5px;color:var(--gray-dark);}
+
+/* About */
+.about-grid{grid-template-columns:1fr;}
+@media(min-width:640px){.about-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:980px){.about-grid{grid-template-columns:repeat(4,1fr);}}
+
+/* What we protect */
+.protect-grid{grid-template-columns:repeat(2,1fr);}
+@media(min-width:640px){.protect-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:980px){.protect-grid{grid-template-columns:repeat(5,1fr);}}
+.protect-item{border:1px solid var(--line);padding:22px 16px;text-align:center;border-radius:var(--radius);transition:border-color .2s,transform .2s;}
+.protect-item:hover{border-color:var(--yellow);transform:translateY(-3px);}
+.protect-item svg{width:24px;height:24px;stroke:var(--black);margin:0 auto 12px;}
+.protect-item span{font-size:13.5px;font-weight:600;}
+
+/* Services */
+.svc-grid{grid-template-columns:1fr;}
+@media(min-width:640px){.svc-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1100px){.svc-grid{grid-template-columns:repeat(3,1fr);}}
+.svc-card{position:relative;transition:opacity .3s ease, transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease), max-height .35s ease, margin .35s ease, padding .35s ease, border-width .35s ease;}
+.svc-card.is-collapsed{
+  opacity:0;
+  transform:translateY(-8px);
+  max-height:0;
+  overflow:hidden;
+  margin:0;
+  padding-top:0;
+  padding-bottom:0;
+  border-width:0;
+  pointer-events:none;
+}
+.svc-num{font-family:var(--mono);font-size:12px;color:var(--yellow-deep);letter-spacing:.06em;margin-bottom:14px;display:block;}
+.svc-learn{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;margin-top:16px;color:var(--black);}
+.svc-learn svg{width:14px;height:14px;transition:transform .2s;}
+.svc-card:hover .svc-learn svg{transform:translateX(4px);}
+.services-toggle{display:flex;justify-content:center;margin-top:18px;}
+.services-toggle .btn{min-width:210px;}
+@media(max-width:767px){
+  .svc-grid{gap:10px;}
+  .svc-card{padding:16px 14px;}
+  .svc-num{font-size:10px;margin-bottom:8px;}
+  .svc-card .icon{width:32px;height:32px;margin-bottom:10px;border-radius:7px;}
+  .svc-card .icon svg{width:16px;height:16px;}
+  .svc-card h4{font-size:14px;margin-bottom:5px;line-height:1.25;}
+  .svc-card p{font-size:12px;line-height:1.45;}
+  .svc-learn{font-size:12px;gap:4px;margin-top:10px;}
+  .svc-learn svg{width:12px;height:12px;}
+  .services-toggle{margin-top:14px;}
+  .services-toggle .btn{width:100%;max-width:280px;}
+}
+
+/* How it works */
+.how-section{background:#050A13;color:var(--white);}
+.how-section .section-head{max-width:700px;margin:0 auto 48px;text-align:center;}
+.how-section .section-head h2{color:var(--white);font-size:clamp(30px,4vw,48px);}
+.how-section .section-head h2 .accent{color:var(--yellow);}
+.how-section .section-head p{color:#AFC0D3;font-size:15px;max-width:500px;margin:12px auto 0;line-height:1.55;}
+.how-section .eyebrow{display:none;}
+.steps{display:grid;gap:42px;grid-template-columns:1fr;text-align:center;counter-reset:step;}
+@media(min-width:640px){.steps{grid-template-columns:repeat(2,1fr);gap:48px 28px;}}
+@media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr);gap:28px;}}
+.step{padding:0;border:0;display:flex;flex-direction:column;align-items:center;}
+.step-icon{width:48px;height:48px;border:1px solid rgba(244,194,43,.45);border-radius:11px;background:rgba(244,194,43,.1);display:flex;align-items:center;justify-content:center;color:var(--yellow);margin-bottom:14px;}
+.step-icon svg{width:22px;height:22px;stroke:currentColor;}
+.step .n{font-family:var(--disp);font-size:36px;line-height:1;color:var(--yellow);font-weight:800;letter-spacing:-.02em;margin-bottom:8px;}
+.step h4{margin:0 0 8px;font-size:15px;color:var(--white);}
+.step p{font-size:12.5px;color:#AFC0D3;line-height:1.65;max-width:230px;}
+@media(max-width:480px){.how-section .section-head{margin-bottom:38px;}.steps{gap:34px;}.step p{max-width:290px;}}
+
+/* Testimonials */
+.testimonial-section{background:#0D2039;color:var(--white);}
+.testimonial-section .section-head{max-width:620px;margin:0 auto var(--sp-5);text-align:center;}
+.testimonial-section .section-head .eyebrow{justify-content:center;color:#B8C8D9;}
+.testimonial-section .section-head h2{color:var(--white);}
+.testimonial-section .section-head p{color:#B8C8D9;margin-left:auto;margin-right:auto;}
+.testimonial-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+@media(min-width:640px){.testimonial-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1100px){.testimonial-grid{grid-template-columns:repeat(4,1fr);}}
+.testimonial-card{background:#172D4A;border:1px solid rgba(184,200,217,.2);border-radius:var(--radius);padding:22px 20px;display:flex;flex-direction:column;min-height:250px;transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease);}
+.testimonial-card:hover{transform:translateY(-4px);border-color:rgba(244,194,43,.55);box-shadow:0 16px 30px rgba(0,0,0,.16);}
+.testimonial-stars{display:flex;gap:3px;color:var(--yellow);margin-bottom:14px;}
+.testimonial-stars svg{width:14px;height:14px;fill:currentColor;stroke:currentColor;}
+.testimonial-quote{color:#F0F3F6;font-size:13.5px;line-height:1.65;font-style:italic;margin-bottom:22px;}
+.testimonial-client{display:flex;align-items:center;gap:10px;margin-top:auto;}
+.testimonial-avatar{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--yellow);color:var(--black);font-family:var(--disp);font-size:12px;font-weight:800;flex-shrink:0;}
+.testimonial-client strong{display:block;color:var(--white);font-family:var(--disp);font-size:12.5px;line-height:1.3;}
+.testimonial-client span{display:block;color:#91A5BB;font-size:10.5px;line-height:1.4;margin-top:2px;}
+
+/* Why */
+.why-grid{grid-template-columns:1fr;}
+@media(min-width:640px){.why-grid{grid-template-columns:1fr 1fr;}}
+.why-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);}
+.why-item svg{width:18px;height:18px;stroke:var(--yellow-deep);flex-shrink:0;margin-top:3px;}
+.why-quote{margin-top:44px;border-left:3px solid var(--yellow);padding-left:22px;font-family:var(--disp);font-size:clamp(20px,3vw,28px);font-weight:600;max-width:640px;}
+
+/* CEO */
+.ceo-wrap{display:grid;gap:36px;grid-template-columns:1fr;align-items:start;}
+@media(min-width:900px){.ceo-wrap{grid-template-columns:320px 1fr;}}
+.ceo-photo{aspect-ratio:4/5;background:linear-gradient(155deg,var(--charcoal),var(--black));border-radius:14px;overflow:hidden;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;}
+.ceo-photo img{width:100%;height:100%;object-fit:cover;}
+.ceo-photo .ph-icon{width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(244,194,43,.5);display:flex;align-items:center;justify-content:center;}
+.ceo-photo .ph-icon svg{width:24px;height:24px;stroke:var(--yellow);}
+.ceo-photo .ph-label{font-family:var(--mono);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#B8B7B2;}
+.ceo-social{display:flex;gap:10px;margin-top:16px;}
+.ceo-social a{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;}
+.ceo-social a:hover{border-color:var(--yellow);background:var(--paper);}
+.ceo-social svg{width:15px;height:15px;}
+.ceo-name{font-size:14px;font-weight:600;font-family:var(--mono);color:var(--yellow-deep);text-transform:uppercase;letter-spacing:.06em;}
+.ceo-bio p{color:var(--gray-dark);margin-top:14px;}
+.ceo-msg{margin-top:64px;padding-top:56px;border-top:1px solid var(--line);}
+.ceo-msg blockquote{font-family:var(--disp);font-size:clamp(19px,2.6vw,25px);font-weight:500;line-height:1.5;max-width:760px;}
+.ceo-msg .attrib{margin-top:22px;font-family:var(--mono);font-size:13px;color:var(--gray-dark);}
+
+/* Team */
+#team{padding-top:52px;padding-bottom:52px;}
+.team-grid{grid-template-columns:1fr;gap:14px;}
+@media(min-width:640px){.team-grid{grid-template-columns:repeat(2,1fr);gap:16px;}}
+@media(min-width:980px){.team-grid{grid-template-columns:repeat(3,1fr);gap:18px;}}
+.team-card{overflow:hidden;padding:0; border-radius:12px;}
+.team-photo{aspect-ratio:1/1;background:linear-gradient(155deg,#EFEDE7,var(--paper));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-bottom:1px solid var(--line);overflow:hidden;}
+.team-photo img{width:100%;height:100%;object-fit:cover;}
+.team-photo .ph-icon{width:34px;height:34px;border-radius:50%;border:1.5px solid #D9D6CE;display:flex;align-items:center;justify-content:center;}
+.team-photo .ph-icon svg{width:16px;height:16px;stroke:var(--gray-dark);}
+.team-photo .ph-label{font-family:var(--mono);font-weight:600;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);}
+.team-body{padding:16px 16px 18px;}
+.team-body h4{margin-bottom:2px;font-size:18px;line-height:1.3;}
+.team-role{font-family:var(--mono);font-size:11.5px;color:var(--yellow-deep);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;display:block;}
+.team-body p{font-size:13.5px;line-height:1.55;color:var(--gray-dark);}
+.team-social{display:flex;gap:8px;margin-top:12px;}
+.team-social a{width:28px;height:28px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.team-social svg{width:12px;height:12px;}
+@media (max-width: 767px){
+  #team{padding-top:38px;padding-bottom:38px;}
+  #team .section-head{margin-bottom:22px;}
+  .team-grid{gap:12px;}
+  .team-body{padding:14px 14px 16px;}
+  .team-body h4{font-size:17px;}
+  .team-role{margin-bottom:6px;}
+  .team-body p{font-size:13px;}
+  .team-photo .ph-icon{width:30px;height:30px;}
+}
+
+/* Case studies */
+.case-grid{grid-template-columns:1fr;}
+@media(min-width:900px){.case-grid{grid-template-columns:repeat(3,1fr);}}
+.case-card{background:var(--black);color:var(--white);border-radius:var(--radius);padding:30px;border:1px solid var(--black);}
+.case-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);border:1px solid rgba(244,194,43,.4);padding:3px 8px;border-radius:12px;display:inline-block;margin-bottom:16px;}
+.case-card h4{color:var(--white);font-size:19px;margin-bottom:16px;}
+.case-row{font-size:13.5px;padding:10px 0;border-top:1px solid #2A2A2C;}
+.case-row b{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#9A9A94;display:block;margin-bottom:4px;}
+
+/* Insights */
+.insights-grid{grid-template-columns:1fr;}
+@media(min-width:640px){.insights-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1100px){.insights-grid{grid-template-columns:repeat(3,1fr);}}
+.post-cat{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow-deep);}
+.post-title{margin-top:10px;font-size:17px;}
+
+/* FAQ */
+.faq{max-width:820px;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;text-align:left;font-family:var(--disp);font-weight:600;font-size:16.5px;}
+.faq-q svg{width:16px;height:16px;flex-shrink:0;transition:transform .25s var(--ease);}
+.faq-item.open .faq-q svg{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s var(--ease);}
+.faq-a p{padding-bottom:22px;color:var(--gray-dark);font-size:14.5px;max-width:680px;}
+
+/* Contact */
+.contact-wrap{display:grid;gap:40px;grid-template-columns:1fr;}
+@media(min-width:980px){.contact-wrap{grid-template-columns:.85fr 1.15fr;}}
+.form-grid{display:grid;gap:16px;grid-template-columns:1fr;}
+@media(min-width:560px){.form-grid{grid-template-columns:1fr 1fr;}}
+.field{display:flex;flex-direction:column;gap:6px;}
+.field.full{grid-column:1/-1;}
+.field label{font-size:12.5px;font-weight:600;color:var(--gray-dark);}
+.field input,.field select,.field textarea{
+  padding:13px 14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);
+  transition:border-color .2s, background .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--yellow-deep);background:var(--white);}
+.field.error input,.field.error select,.field.error textarea{border-color:#C0392B;}
+.field .err-msg{font-size:12px;color:#C0392B;display:none;}
+.field.error .err-msg{display:block;}
+.form-note{font-size:12.5px;color:var(--gray);margin-top:16px;}
+.form-status{display:none;padding:20px;border:1px solid var(--yellow);background:var(--paper);border-radius:var(--radius);margin-top:8px;}
+.form-status.show{display:block;}
+.form-status h4{font-size:18px;margin-bottom:6px;}
+.form-status p{font-size:14px;color:var(--gray-dark);}
+.spinner{width:16px;height:16px;border:2px solid rgba(0,0,0,.2);border-top-color:var(--black);border-radius:50%;animation:spin .7s linear infinite;display:none;}
+.btn.loading .spinner{display:inline-block;}
+.btn.loading .btn-label{opacity:.6;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* Footer */
+footer{background:linear-gradient(180deg,#101114 0%,#0B0B0C 100%);color:var(--white);padding:88px 0 0;}
+.footer-main{display:grid;gap:64px;padding:0 0 64px;}
+@media(min-width:900px){.footer-main{grid-template-columns:1.25fr repeat(3,1fr);gap:56px;padding:0 0 72px;}}
+
+/* Footer Top Section */
+.foot-brand{display:flex;flex-direction:column;gap:22px;max-width:280px;}
+.foot-logo{display:flex;align-items:center;gap:12px;font-family:var(--disp);font-weight:800;font-size:18px;color:var(--white);margin:0;}
+.foot-logo .mark{width:38px;height:38px;background:var(--yellow);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:800;font-size:14px;color:var(--black);box-shadow:0 5px 18px rgba(244,194,43,.2);}
+footer p.tag{color:#9A9A94;font-size:13.5px;line-height:1.6;margin:0;}
+
+/* Status Box */
+.foot-status{display:flex;align-items:center;gap:10px;padding:12px 14px;background:rgba(76,175,80,.06);border:1px solid rgba(76,175,80,.24);border-radius:8px;width:fit-content;font-size:12.5px;color:#63C267;}
+.foot-status::before{content:'';width:8px;height:8px;background:#4CB150;border-radius:50%;display:block;flex-shrink:0;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.5;}}
+.foot-status span{font-weight:600;}
+
+/* Social Icons */
+.foot-social{display:flex;gap:10px;margin-top:4px;}
+.foot-social a{
+  width:38px;height:38px;border:1px solid rgba(255,255,255,.14);border-radius:8px;display:flex;align-items:center;justify-content:center;
+  color:#B8B7B2;transition:all .2s var(--ease);font-size:14px;
+}
+.foot-social a:hover{border-color:var(--yellow);color:var(--yellow);background:rgba(244,194,43,.08);}
+
+/* Footer Columns */
+.foot-col h4{color:var(--yellow);font-size:12px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;margin:0 0 22px 0;font-weight:700;line-height:1.4;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:13px;}
+.foot-col li{margin:0;}
+.foot-col a{color:#A8A8A3;font-size:13.5px;line-height:1.45;transition:color .2s,transform .2s;display:inline-block;}
+.foot-col a:hover{transform:translateX(3px);}
+.foot-col a:hover{color:var(--yellow);}
+
+/* Divider */
+.foot-divider{height:1px;background:rgba(255,255,255,.1);margin:0 0 4px;grid-column:1/-1;}
+
+/* Contact & Links Section */
+.foot-bottom-wrap{display:grid;gap:50px;grid-column:1/-1;padding:4px 0 52px;}
+@media(min-width:900px){.foot-bottom-wrap{grid-template-columns:1fr 1.5fr;gap:60px;}}
+
+.foot-contact{display:flex;flex-direction:column;gap:28px;}
+.foot-contact h5{color:var(--yellow);font-size:13px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;margin:0;font-weight:700;}
+.foot-contact-item{display:flex;align-items:flex-start;gap:12px;}
+.foot-contact-item svg{width:18px;height:18px;stroke:var(--yellow);margin-top:2px;flex-shrink:0;}
+.foot-contact-item div{display:flex;flex-direction:column;gap:4px;}
+.foot-contact-item .label{font-size:12px;color:#9A9A94;font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+.foot-contact-item .value{font-size:14px;color:#E7E5E0;}
+.foot-contact-item a{color:#E7E5E0;text-decoration:none;transition:color .2s;}
+.foot-contact-item a:hover{color:var(--yellow);}
+
+/* Quick Links */
+.foot-quick{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+@media(max-width:640px){.foot-quick{grid-template-columns:1fr;}}
+
+.foot-quick-col h5{color:var(--yellow);font-size:13px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;margin:0 0 16px 0;font-weight:700;}
+.foot-quick-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.foot-quick-col a{color:#B8B7B2;font-size:14px;transition:color .2s;}
+.foot-quick-col a:hover{color:var(--yellow);}
+
+/* Emergency Section */
+.foot-emergency{grid-column:1/-1;background:linear-gradient(110deg,rgba(244,194,43,.12),rgba(244,194,43,.035));border:1px solid rgba(244,194,43,.28);border-radius:10px;padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;box-shadow:inset 0 1px 0 rgba(255,255,255,.04);}
+@media(max-width:640px){.foot-emergency{flex-direction:column;text-align:center;padding:28px;}}
+
+.foot-emergency-text h5{color:var(--white);font-size:18px;margin:0 0 8px 0;font-weight:700;font-family:var(--disp);}
+.foot-emergency-text p{color:#B8B7B2;font-size:14px;margin:0;}
+
+.foot-emergency-btn{display:flex;gap:10px;align-items:center;}
+.btn-emergency{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--yellow);color:var(--black);
+  border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;transition:all .2s var(--ease);
+  font-family:var(--body);white-space:nowrap;
+}
+.btn-emergency:hover{background:var(--yellow-deep);transform:translateY(-2px);box-shadow:0 8px 20px rgba(244,194,43,.3);}
+.btn-emergency svg{width:16px;height:16px;}
+
+/* Footer Bottom */
+.foot-base{border-top:1px solid rgba(255,255,255,.2);padding:28px 0 24px;text-align:center;font-size:13px;color:#F0F0EC;}
+.foot-base-content{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;align-items:center;}
+.foot-base a{color:#F0F0EC;font-weight:600;text-decoration:underline;text-decoration-color:rgba(240,240,236,.45);text-underline-offset:3px;transition:color .2s, text-decoration-color .2s;}
+.foot-base a:hover{color:var(--yellow);text-decoration-color:var(--yellow);}
+.admin-login-btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 18px;background:var(--yellow);color:var(--black) !important;border:1.5px solid var(--yellow);border-radius:6px;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;text-decoration:none !important;box-shadow:0 3px 12px rgba(244,194,43,.22);transition:background .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease);}
+.admin-login-btn:hover{background:#FFD84D;border-color:#FFD84D;color:var(--black) !important;transform:translateY(-1px);box-shadow:0 6px 18px rgba(244,194,43,.35);}
+.foot-base-divider{width:1px;height:18px;background:rgba(255,255,255,.3);}
+
+/* Responsive Footer */
+@media(max-width:767px){
+  footer{padding:58px 0 0;}
+  .footer-main{gap:38px;padding:0 0 42px;}
+  .foot-brand{max-width:none;gap:18px;}
+  .foot-col h4{margin-bottom:16px;}
+  .foot-col ul{gap:10px;}
+  .foot-divider{margin:4px 0 0;}
+  .foot-bottom-wrap{gap:36px;padding:0 0 40px;}
+  .foot-contact{gap:20px;}
+  .foot-emergency{padding:24px;}
+}
+@media(max-width:480px){
+  footer{padding:46px 0 0;}
+  .footer-main{gap:32px;padding:0 0 32px;}
+  .foot-contact-item{gap:10px;}
+  .foot-divider{margin:0;}
+  .foot-emergency{padding:24px 20px;}
+  .foot-base-content{gap:18px;}
+  .foot-base-divider{display:none;}
+  .foot-base{font-size:12.5px;}
+}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease), transform .6s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ============ ADMIN ============ */
+#adminRoot{display:none;position:fixed;inset:0;background:var(--paper);z-index:500;overflow-y:auto;}
+#adminRoot.show{display:block;}
+.admin-topbar{background:var(--black);color:var(--white);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:5;}
+.admin-topbar .logo{color:var(--white);}
+.admin-topbar .logo .mark{background:var(--yellow);color:var(--black);}
+.admin-exit{font-size:13px;color:#B8B7B2;}
+.admin-exit:hover{color:var(--yellow);}
+.admin-shell{display:grid;grid-template-columns:1fr;min-height:calc(100vh - 64px);}
+@media(min-width:860px){.admin-shell{grid-template-columns:220px 1fr;}}
+.admin-side{background:var(--black);padding:16px 10px;display:flex;flex-direction:row;overflow-x:auto;gap:4px;}
+@media(min-width:860px){.admin-side{flex-direction:column;overflow-x:visible;padding:24px 12px;}}
+.admin-side button{padding:12px 14px;border-radius:var(--radius-sm);font-size:14px;font-weight:600;text-align:left;color:#9A9A94;white-space:nowrap;border-left:2px solid transparent;transition:background .2s,color .2s;}
+.admin-side button.active{background:rgba(244,194,43,.12);color:var(--yellow);border-left-color:var(--yellow);}
+.admin-side button:hover:not(.active){background:rgba(255,255,255,.06);color:var(--white);}
+.admin-main{padding:32px 20px 80px;}
+@media(min-width:860px){.admin-main{padding:40px;}}
+.admin-view{display:none;}
+.admin-view.active{display:block;}
+.admin-h{font-family:var(--disp);font-size:26px;margin-bottom:6px;}
+.admin-sub{color:var(--gray-dark);font-size:14px;margin-bottom:28px;}
+.admin-cards{display:grid;gap:16px;grid-template-columns:1fr;margin-bottom:8px;}
+@media(min-width:640px){.admin-cards{grid-template-columns:repeat(3,1fr);}}
+.admin-stat{background:var(--white);border:1px solid var(--line);padding:22px;border-radius:var(--radius);}
+.admin-stat .lab{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);}
+.admin-stat .num{font-family:var(--disp);font-size:26px;margin-top:8px;}
+.admin-panel{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px;margin-top:24px;}
+.admin-panel h3{font-size:17px;margin-bottom:18px;}
+.aform{display:grid;gap:14px;grid-template-columns:1fr;}
+@media(min-width:640px){.aform.two{grid-template-columns:1fr 1fr;}}
+.aform .full{grid-column:1/-1;}
+.aform label{font-size:12.5px;font-weight:600;color:var(--gray-dark);display:block;margin-bottom:6px;}
+.aform input,.aform textarea{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);}
+.aform input:focus,.aform textarea:focus{outline:none;border-color:var(--yellow-deep);background:var(--white);}
+.upload-box{border:1px dashed var(--line);border-radius:var(--radius);padding:24px;text-align:center;background:var(--paper);}
+.upload-box img{max-height:120px;margin:0 auto 10px;border-radius:4px;}
+.upload-box input[type=file]{display:none;}
+.upload-box .up-btn{font-size:13px;font-weight:600;color:var(--yellow-deep);}
+.admin-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;}
+.team-row{display:flex;gap:16px;align-items:center;padding:16px;border:1px solid var(--line);border-radius:var(--radius);margin-bottom:12px;background:var(--white);flex-wrap:wrap;}
+.team-row img,.team-row .ph{width:52px;height:52px;border-radius:50%;object-fit:cover;background:var(--paper);flex-shrink:0;}
+.team-row .info{flex:1;min-width:140px;}
+.team-row .info b{display:block;font-size:14.5px;}
+.team-row .info span{font-size:12.5px;color:var(--gray);}
+.badge{font-size:11px;font-family:var(--mono);padding:3px 9px;border-radius:20px;border:1px solid var(--line);}
+.badge.on{border-color:var(--yellow-deep);color:var(--yellow-deep);}
+.team-row .rowbtns{display:flex;gap:8px;}
+.rowbtn{font-size:12.5px;font-weight:600;padding:8px 12px;border:1px solid var(--line);border-radius:var(--radius);}
+.rowbtn:hover{border-color:var(--black);}
+.rowbtn.danger:hover{border-color:#C0392B;color:#C0392B;}
+.manage-row{display:grid;grid-template-columns:1fr;gap:12px;align-items:center;padding:16px;border:1px solid var(--line);border-radius:var(--radius);margin-bottom:12px;background:var(--white);}
+@media(min-width:700px){.manage-row{grid-template-columns:minmax(0,1fr) auto auto auto;}}
+.manage-row .info{min-width:0;}.manage-row .info b{display:block;font-size:14.5px;}.manage-row .info span{display:block;color:var(--gray);font-size:12.5px;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.manage-row .rowbtns{display:flex;gap:8px;flex-wrap:wrap;}
+.switch{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--gray-dark);cursor:pointer;white-space:nowrap;}
+.switch input{position:absolute;opacity:0;pointer-events:none;}.switch i{width:34px;height:20px;background:#D8D6D0;border-radius:20px;position:relative;transition:background .2s;}.switch i::after{content:'';position:absolute;width:14px;height:14px;left:3px;top:3px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.2);}.switch input:checked+i{background:var(--yellow-deep);}.switch input:checked+i::after{transform:translateX(14px);}
+.admin-section-actions{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;}
+.admin-section-actions .admin-sub{margin:0;}
+.footer-category{border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:16px;background:var(--white);}.footer-category h3{font-size:16px;margin:0 0 14px;}.footer-link-row{display:grid;grid-template-columns:1fr;gap:10px;padding:12px 0;border-top:1px solid var(--line);}.footer-link-row:first-of-type{border-top:0;}.footer-link-row .link-info{min-width:0;}.footer-link-row b{font-size:13.5px;}.footer-link-row small{display:block;color:var(--gray);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}.footer-link-row .rowbtns{display:flex;gap:8px;flex-wrap:wrap;}@media(min-width:700px){.footer-link-row{grid-template-columns:minmax(0,1fr) auto auto;align-items:center;}}
+.footer-top-columns{display:contents;}
+.inquiry-row{border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-bottom:14px;background:var(--white);}.inquiry-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:14px;}.inquiry-head h3{font-size:16px;margin:0 0 4px;}.inquiry-head p{color:var(--gray);font-size:12px;margin:0;}.inquiry-grid{display:grid;grid-template-columns:1fr;gap:12px;border-top:1px solid var(--line);padding-top:14px;}.inquiry-field strong{display:block;color:var(--gray);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;}.inquiry-field span,.inquiry-field p{font-size:13.5px;color:var(--gray-dark);word-break:break-word;margin:0;}.inquiry-field.full{grid-column:1/-1;}@media(min-width:700px){.inquiry-grid{grid-template-columns:repeat(2,1fr);}}
+.login-card{max-width:380px;margin:100px auto;background:var(--white);border:1px solid var(--line);padding:36px;border-radius:var(--radius);}
+.login-card h3{margin-bottom:6px;}
+.login-card p{color:var(--gray-dark);font-size:13.5px;margin-bottom:22px;}
+.login-note{margin-top:18px;font-size:12px;color:var(--gray);line-height:1.6;}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--black);color:var(--white);padding:14px 20px;border-radius:var(--radius);font-size:13.5px;z-index:600;transform:translateY(120%);transition:transform .3s var(--ease);border-left:3px solid var(--yellow);}
+.toast.show{transform:translateY(0);}
+.modal-back{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:700;display:none;align-items:center;justify-content:center;padding:20px;}
+.modal-back.show{display:flex;}
+.modal{background:var(--white);border-radius:var(--radius);padding:28px;max-width:380px;width:100%;}
+.modal h4{margin-bottom:10px;}
+.modal p{font-size:14px;color:var(--gray-dark);margin-bottom:22px;}
+.modal .btns{display:flex;gap:10px;justify-content:flex-end;}
+iframe,video{display:block;max-width:100%;width:100%;}
+@media(max-width:767px){
+  html,body{max-width:100%;overflow-x:hidden;}
+  .wrap{width:100%;min-width:0;}
+  .hero-grid,.grid,.contact-wrap,.footer-main,.foot-bottom-wrap{min-width:0;}
+  .hero-grid>*{min-width:0;}
+  .hero h1,.hero-sub,.section-head h2,.section-head p,.card h4,.card p,.step h4,.step p,.case-card,.testimonial-card{overflow-wrap:anywhere;}
+  .btn{max-width:100%;white-space:normal;text-align:center;}
+  .hero-visual{max-width:100%;}
+  .hv-panel{max-width:100%;}
+  .foot-emergency-text,.foot-emergency-btn{min-width:0;max-width:100%;}
+  .foot-emergency-text h5,.foot-emergency-text p{overflow-wrap:anywhere;}
+  .btn-emergency{max-width:100%;white-space:normal;text-align:center;}
+  .manage-row,.footer-link-row,.inquiry-row{min-width:0;}
+  .manage-row .info,.footer-link-row .link-info,.inquiry-head>div{min-width:0;max-width:100%;}
+  .manage-row .info span,.footer-link-row small{white-space:normal;overflow-wrap:anywhere;}
+  .admin-topbar{padding:0 16px;gap:12px;}
+  .admin-topbar .logo{min-width:0;overflow:hidden;text-overflow:ellipsis;}
+  .admin-topbar .admin-exit{white-space:nowrap;flex-shrink:0;}
+  .admin-main{padding:28px 16px 72px;}
+  .admin-panel{padding:22px 18px;}
+  .aform input,.aform textarea,.aform select,.field input,.field select,.field textarea{min-width:0;max-width:100%;}
+  .admin-actions .btn{flex:1 1 180px;}
+}
+@media(max-width:575px){
+  .protect-grid{grid-template-columns:1fr;}
+  .section-head h2{overflow-wrap:anywhere;}
+  .foot-quick{gap:24px;}
+  .foot-base-content{flex-direction:column;gap:14px;}
+  .foot-base-divider{display:none;}
+  .inquiry-head{flex-direction:column;}
+  .inquiry-delete{width:100%;}
+  .admin-side{padding:12px 10px;}
+  .admin-side button{font-size:13px;padding:10px 12px;}
+  .admin-section-actions{align-items:stretch;}
+  .admin-section-actions .btn{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header id="siteHeader">
+  <div class="wrap navrow">
+    <a href="#home" class="logo">
+      <span class="mark">TG</span>
+      TrustGuard <span style="color:var(--yellow-deep)">Digital</span>
+    </a>
+    <nav class="navlinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#protect">Digital Protection</a>
+      <a href="#why">Reputation Management</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary nav-cta">Get a Free Consultation</a>
+    <button class="hamburger" id="hamBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+   <a href="#about" class="mnav">About</a>
+   <a href="#services" class="mnav">Services</a>
+   <a href="#protect" class="mnav">Digital Protection</a>
+   <a href="#why" class="mnav">Reputation Management</a>
+   <a href="#insights" class="mnav">Insights</a>
+   <a href="#contact" class="mnav">Contact</a>
+  <a href="#contact" class="btn btn-primary mnav">Get a Free Consultation</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Digital Protection &amp; Reputation Management</div>
+      <h1>Protect Your Reputation. Protect Your Digital Presence.</h1>
+      <p class="hero-sub">TrustGuard Digital helps businesses, brands, executives, and individuals protect their online reputation, manage harmful or unauthorized content, and build a stronger digital presence.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Get a Free Consultation</a>
+        <a href="#services" class="btn btn-outline">Explore Our Services</a>
+      </div>
+      <div class="hero-trust">
+        <span>Confidential</span><span>Professional</span><span>Transparent</span><span>Client-Focused</span>
+      </div>
+    </div>
+    <div class="hero-visual reveal" id="heroVisual">
+      <div class="hv-panel">
+        <img class="hero-gif" src="hero-birthday.gif" alt="Birthday celebration animation">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">About TrustGuard</div>
+      <h2>Your Digital Reputation Is an Asset. Protect It.</h2>
+      <p>What appears when someone searches your name or brand — search results, reviews, photos, videos, social posts, and website mentions — shapes trust before a conversation ever begins. We help you understand it, monitor it, and respond to it responsibly.</p>
+    </div>
+    <div class="grid about-grid">
+      <div class="card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/></svg></div><h4>Confidential</h4><p>Client information is handled professionally and discreetly at every stage of engagement.</p></div>
+      <div class="card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h10"/></svg></div><h4>Transparent</h4><p>Clear communication, realistic expectations, and honest processes from day one.</p></div>
+      <div class="card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12h8"/></svg></div><h4>Professional</h4><p>Structured digital protection and reputation strategies built on established procedures.</p></div>
+      <div class="card reveal"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c0-4 3.5-6 7-6s7 2 7 6"/></svg></div><h4>Client-Focused</h4><p>Solutions tailored to each client's specific situation, industry, and goals.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE PROTECT ============ -->
+<section class="section paper" id="protect">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What We Protect</div>
+      <h2>Every surface where your reputation lives online.</h2>
+    </div>
+    <div class="grid protect-grid" id="protectGrid"></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Services</div>
+      <h2>Digital protection, built around your situation.</h2>
+      <p>We help clients identify, assess, document, report, and dispute problematic content through legitimate platform and legal procedures — never with guarantees, always with a clear plan.</p>
+    </div>
+    <div class="grid svc-grid" id="svcGrid"></div>
+    <div class="services-toggle">
+      <button type="button" class="btn btn-outline" id="servicesToggleBtn" aria-expanded="false">See More Services</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section how-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>How We Protect You in <span class="accent">4 Simple Steps</span></h2>
+      <p>From your first message to full resolution — a clear, fast, and reliable process every time.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><div class="n">01</div><h4>Contact Us</h4><p>Reach out with a brief description of your situation. No lengthy forms — just tell us what is happening and we take it from there.</p></div>
+      <div class="step reveal"><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="7" width="10" height="9" rx="2"/><path d="M9 7V5h6v2M9 11h.01M15 11h.01M12 16v3M4 10v4M20 10v4"/></svg></div><div class="n">02</div><h4>We Scan Everything</h4><p>Our AI and expert team scan hundreds of platforms to find every instance of the problem before any action is taken.</p></div>
+      <div class="step reveal"><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/></svg></div><div class="n">03</div><h4>Takedowns Filed</h4><p>Notices and platform reports are filed simultaneously across all identified sources — same day, no delays.</p></div>
+      <div class="step reveal"><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.7 2.7L16.5 9"/></svg></div><div class="n">04</div><h4>Confirmed &amp; Monitored</h4><p>Every removal is verified and documented. Ongoing monitoring catches any re-uploads automatically.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section testimonial-section" id="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Client Feedback</div>
+      <h2>What Our Clients Say</h2>
+      <p>Trusted by businesses and individuals to protect their digital presence.</p>
+    </div>
+    <div class="testimonial-grid">
+      <article class="testimonial-card reveal">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg></div>
+        <p class="testimonial-quote">“The team handled our copyright issue quickly and professionally. We finally have a clear process for protecting our content online.”</p>
+        <div class="testimonial-client"><div class="testimonial-avatar">SM</div><div><strong>Sarah M.</strong><span>Content Creator</span></div></div>
+      </article>
+      <article class="testimonial-card reveal">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6 2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg></div>
+        <p class="testimonial-quote">“Our brand was being impersonated across several platforms. TrustGuard gave us the guidance and monitoring we needed to respond confidently.”</p>
+        <div class="testimonial-client"><div class="testimonial-avatar">AK</div><div><strong>Ahmed K.</strong><span>Business Owner</span></div></div>
+      </article>
+      <article class="testimonial-card reveal">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6 2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg></div>
+        <p class="testimonial-quote">“The process was transparent from start to finish. Their team helped us protect our course content and kept us informed at every step.”</p>
+        <div class="testimonial-client"><div class="testimonial-avatar">JL</div><div><strong>Jessica L.</strong><span>Online Educator</span></div></div>
+      </article>
+      <article class="testimonial-card reveal">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg><svg viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3z"/></svg></div>
+        <p class="testimonial-quote">“Professional, responsive, and exactly as promised. We appreciated the honest advice and the careful attention to our brand.”</p>
+        <div class="testimonial-client"><div class="testimonial-avatar">MD</div><div><strong>Mark D.</strong><span>Brand Manager</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="section paper" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why TrustGuard</div>
+      <h2>Practical protection, not empty promises.</h2>
+    </div>
+    <div class="grid why-grid">
+      <div>
+        <div class="why-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><div><h4 style="font-size:15.5px">Confidential Client Service</h4></div></div>
+        <div class="why-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><div><h4 style="font-size:15.5px">Transparent Processes</h4></div></div>
+        <div class="why-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><div><h4 style="font-size:15.5px">Strategic Digital Protection</h4></div></div>
+      </div>
+      <div>
+        <div class="why-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><div><h4 style="font-size:15.5px">Experienced Team</h4></div></div>
+        <div class="why-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><div><h4 style="font-size:15.5px">Customized Solutions</h4></div></div>
+        <div class="why-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><div><h4 style="font-size:15.5px">Long-Term Reputation Focus</h4></div></div>
+      </div>
+    </div>
+    <div class="why-quote reveal">"We don't promise magic. We build practical digital protection strategies."</div>
+  </div>
+</section>
+
+<!-- ============ CEO ============ -->
+<section class="section" id="ceo">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">Leadership</div><h2>Meet Our CEO</h2></div>
+    <div class="ceo-wrap reveal">
+      <div>
+        <div class="ceo-photo" id="ceoPhotoBox" role="img" aria-label="CEO photo placeholder"><div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"/></svg></div><span class="ph-label">Photo Placeholder</span></div>
+        <div class="ceo-social" id="ceoSocial"></div>
+      </div>
+      <div>
+        <span class="ceo-name" id="ceoTitle">Founder &amp; Chief Executive Officer</span>
+        <h3 style="font-size:28px;margin-top:8px;" id="ceoName">[CEO Name]</h3>
+        <div class="ceo-bio"><p id="ceoBio">Biography to be added by the TrustGuard Digital team.</p></div>
+      </div>
+    </div>
+    <div class="ceo-msg reveal">
+      <div class="eyebrow">In Their Words</div>
+      <h3 style="margin-bottom:24px;">A Message From Our CEO</h3>
+      <blockquote id="ceoMessage">Digital reputation is built over years and can be affected in moments. We founded TrustGuard Digital to give people and businesses a calm, structured, and honest way to understand what's happening online and respond to it — with transparency about what's realistic, and confidentiality about what matters to you.</blockquote>
+      <div class="attrib">— <span id="ceoMsgName">[CEO Name]</span>, Founder &amp; CEO</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="section paper" id="team">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">Our People</div><h2>Meet Our Team</h2></div>
+    <div class="grid team-grid" id="teamGrid"></div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDIES ============ -->
+<section class="section" id="cases">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Case Studies</div>
+      <h2>Illustrative Examples</h2>
+      <p>These are illustrative placeholder examples of how engagements are typically structured — not verified client outcomes. Real case studies will be added as they become available.</p>
+    </div>
+    <div class="grid case-grid">
+      <div class="case-card reveal"><span class="case-tag">Example</span><h4>Protecting a Growing Brand</h4>
+        <div class="case-row"><b>Challenge</b>Online reputation concerns</div>
+        <div class="case-row"><b>Strategy</b>Digital audit + reputation strategy</div>
+        <div class="case-row"><b>Outcome</b>Improved online presence</div>
+      </div>
+      <div class="case-card reveal"><span class="case-tag">Example</span><h4>Executive Digital Reputation</h4>
+        <div class="case-row"><b>Challenge</b>Negative or misleading online information</div>
+        <div class="case-row"><b>Strategy</b>Content assessment + reporting + search strategy</div>
+        <div class="case-row"><b>Outcome</b>Stronger digital presence</div>
+      </div>
+      <div class="case-card reveal"><span class="case-tag">Example</span><h4>Product &amp; Brand Protection</h4>
+        <div class="case-row"><b>Challenge</b>Unauthorized use of brand/product information</div>
+        <div class="case-row"><b>Strategy</b>Monitoring + documentation + appropriate complaints</div>
+        <div class="case-row"><b>Outcome</b>Better control of digital brand presence</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSIGHTS ============ -->
+<section class="section paper" id="insights">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">Insights</div><h2>Latest From TrustGuard</h2></div>
+    <div class="grid insights-grid" id="insightsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">FAQ</div><h2>Common Questions</h2></div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section dark" id="contact">
+  <div class="wrap contact-wrap">
+    <div class="reveal">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Protect Your Digital Presence Today</h2>
+      <p style="color:#B8B7B2;margin-top:16px;">Tell us what you're dealing with. Our team will review your situation and discuss the appropriate next steps.</p>
+      <p class="form-note" style="color:#7d7d78;margin-top:28px;">Your information is handled confidentially and used only to respond to your inquiry.</p>
+    </div>
+    <div class="reveal" style="background:var(--white);padding:32px;border-radius:var(--radius);">
+      <form id="contactForm" novalidate>
+        <div class="form-grid">
+          <div class="field" data-req><label>Full Name</label><input type="text" name="name"><span class="err-msg">Please enter your full name.</span></div>
+          <div class="field"><label>Company</label><input type="text" name="company"></div>
+          <div class="field" data-req data-email><label>Email</label><input type="email" name="email"><span class="err-msg">Please enter a valid email.</span></div>
+          <div class="field"><label>Phone</label><input type="tel" name="phone"></div>
+          <div class="field full"><label>Website</label><input type="text" name="website" placeholder="yourcompany.com"></div>
+          <div class="field full" data-req><label>Type of Protection Needed</label>
+            <select name="type">
+              <option value="">Select an option</option>
+              <option>Online Reputation Management</option>
+              <option>Review Management</option>
+              <option>Content Removal Assistance</option>
+              <option>Image &amp; Photo Protection</option>
+              <option>Video &amp; Social Content Protection</option>
+              <option>Brand Protection</option>
+              <option>Other / Not Sure</option>
+            </select>
+            <span class="err-msg">Please select a service.</span>
+          </div>
+          <div class="field full" data-req><label>Brief Description</label><textarea name="details" rows="4"></textarea><span class="err-msg">Please add a brief description.</span></div>
+          <div class="field full"><label>Preferred Contact Method</label>
+            <select name="contactMethod"><option>Email</option><option>Phone</option><option>Either</option></select>
+          </div>
+        </div>
+        <div class="admin-actions" style="margin-top:22px;">
+          <button type="submit" class="btn btn-primary" id="submitBtn"><span class="spinner"></span><span class="btn-label">Request a Confidential Consultation</span></button>
+        </div>
+        <p class="form-note">Your information is handled confidentially and used only to respond to your inquiry.</p>
+      </form>
+      <div class="form-status" id="formStatus">
+        <h4>Thank You</h4>
+        <p>Your consultation request has been received. Our team will review your inquiry and contact you regarding the next steps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <!-- Brand Section -->
+      <div class="foot-brand">
+        <div class="foot-logo">
+          <span class="mark">TG</span>TrustGuard Digital
+        </div>
+        <p class="tag">Online Copyright & Brand Protection Solutions</p>
+        <div class="foot-status">
+          <span>All systems operational</span>
+        </div>
+        <div class="foot-social" id="footSocialLinks"></div>
+      </div>
+
+      <div class="footer-top-columns" id="footerTopColumns"></div>
+
+      <!-- Divider -->
+      <div class="foot-divider"></div>
+
+      <!-- Bottom Section: Contact & Quick Links -->
+      <div class="foot-bottom-wrap">
+        <!-- Contact Info -->
+        <div class="foot-contact">
+          <h5>Contact</h5>
+          <div class="foot-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div>
+              <div class="label">Headquarters</div>
+              <div class="value">Digital Protection Center<br>Worldwide Operations</div>
+            </div>
+          </div>
+          <div class="foot-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="M22 6l-10 5L2 6"></path>
+            </svg>
+            <div>
+              <div class="label">Email</div>
+              <a href="mailto:support@trustguard.digital" class="value">support@trustguard.digital</a>
+            </div>
+          </div>
+          <div class="foot-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <div>
+              <div class="label">Phone (24/7)</div>
+              <div class="value">+1 (800) TG-PROTECT</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="foot-quick">
+          <div class="foot-quick-col">
+            <h5>Quick Links</h5>
+            <ul id="footQuickLinks"></ul>
+          </div>
+          <div class="foot-quick-col">
+            <h5>More Resources</h5>
+            <ul id="footResourceLinks"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emergency Support -->
+      <div class="foot-emergency">
+        <div class="foot-emergency-text">
+          <h5>24/7 Emergency Digital Protection Support</h5>
+          <p>Need immediate removal assistance? Our legal team is available around the clock.</p>
+        </div>
+        <div class="foot-emergency-btn">
+          <button class="btn-emergency" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            Emergency Call Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="foot-base">
+      <div class="foot-base-content">
+        <span>© 2019 – 2026 TrustGuard Digital. All rights reserved.</span>
+        <div class="foot-base-divider"></div>
+        <a href="#" id="footerPrivacyLink">Privacy Policy</a>
+        <span class="foot-base-divider"></span>
+        <a href="#" id="footerTermsLink">Terms & Conditions</a>
+        <span class="foot-base-divider"></span>
+        <a href="#" id="adminEntry" class="admin-login-btn">Admin Login</a>
+      </div>
+      <p style="margin-top:16px;color:#9A9A94;font-size:11.5px;">Professional Digital Protection & Brand Protection</p>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- ============ ADMIN PANEL ============ -->
+<div id="adminRoot">
+  <div id="adminLoginView">
+    <div class="admin-topbar"><a class="logo" href="#" id="adminExitTop"><span class="mark">TG</span>TrustGuard Admin</a><a class="admin-exit" href="#" id="exitLink1">Back to site</a></div>
+  <div class="login-card">
+    <h3>Admin Sign In</h3>
+    <p>Sign in with your Firebase Auth credentials to manage site content.</p>
+    <div class="field" style="margin-bottom:14px;"><label>Email</label><input type="email" id="adminEmail" placeholder="admin@trustguard.digital"></div>
+    <div class="field" style="margin-bottom:14px;"><label>Password</label><input type="password" id="adminPassword" placeholder="••••••••"></div>
+    <button class="btn btn-dark" style="width:100%" id="loginBtn">Sign In</button>
+    <div id="loginErr" style="color:#C0392B;font-size:13px;margin-top:10px;display:none;">Invalid email or password.</div>
+    <p class="login-note">Create an admin user in Firebase Console > Authentication > Users. All content is stored in Firestore and Firebase Storage. Public visitors can read content but cannot modify it.</p>
+  </div>
+  </div>
+
+  <div id="adminApp" style="display:none;">
+    <div class="admin-topbar">
+      <a class="logo" href="#" id="adminExitTop2"><span class="mark">TG</span>TrustGuard Admin</a>
+      <div style="display:flex;gap:18px;align-items:center;">
+        <a class="admin-exit" href="#" id="exitLink2">View site</a>
+        <button class="admin-exit" id="logoutBtn">Logout</button>
+      </div>
+    </div>
+    <div class="admin-shell">
+      <div class="admin-side">
+        <button class="asnav active" data-view="dash">Dashboard</button>
+        <button class="asnav" data-view="ceo">CEO</button>
+        <button class="asnav" data-view="team">Team</button>
+        <button class="asnav" data-view="services">Services</button>
+        <button class="asnav" data-view="footer">Footer</button>
+        <button class="asnav" data-view="inquiries">Inquiries</button>
+        <button class="asnav" data-view="content">Content</button>
+        <button class="asnav" data-view="settings">Settings</button>
+      </div>
+      <div class="admin-main">
+
+        <div class="admin-view active" id="view-dash">
+          <h2 class="admin-h">Dashboard</h2>
+          <p class="admin-sub">Overview of your site's editable content.</p>
+          <div class="admin-cards">
+            <div class="admin-stat"><div class="lab">CEO Profile</div><div class="num" id="statCeo">—</div></div>
+            <div class="admin-stat"><div class="lab">Team Members</div><div class="num" id="statTeam">—</div></div>
+            <div class="admin-stat"><div class="lab">Website Status</div><div class="num">Active</div></div>
+          </div>
+          <div class="admin-panel">
+            <h3>Recent Updates</h3>
+            <div id="recentUpdates" style="font-size:13.5px;color:var(--gray-dark);">No updates yet.</div>
+          </div>
+        </div>
+
+        <div class="admin-view" id="view-ceo">
+          <h2 class="admin-h">CEO Management</h2>
+          <p class="admin-sub">Changes save to the live site automatically.</p>
+          <div class="admin-panel">
+            <div class="upload-box" id="ceoUploadBox">
+              <img id="ceoPreview" style="display:none;">
+              <div id="ceoUploadPrompt">
+                <div class="up-btn">Upload CEO Photo</div>
+                <div style="font-size:12px;color:var(--gray);margin-top:6px;">PNG or JPG, up to 5MB</div>
+              </div>
+              <input type="file" id="ceoFile" accept="image/*">
+            </div>
+            <div class="aform two" style="margin-top:20px;">
+              <div><label>CEO Name</label><input type="text" id="f_ceoName"></div>
+              <div><label>Title</label><input type="text" id="f_ceoTitle"></div>
+              <div class="full"><label>Biography</label><textarea id="f_ceoBio" rows="3"></textarea></div>
+              <div class="full"><label>CEO Message</label><textarea id="f_ceoMsg" rows="4"></textarea></div>
+              <div><label>LinkedIn URL</label><input type="text" id="f_ceoLi"></div>
+              <div><label>X (Twitter) URL</label><input type="text" id="f_ceoX"></div>
+              <div><label>Email</label><input type="text" id="f_ceoEmail"></div>
+            </div>
+            <div class="admin-actions">
+              <button class="btn btn-dark" id="ceoSave">Save Changes</button>
+              <button class="btn btn-outline" id="ceoCancel">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-view" id="view-team">
+          <h2 class="admin-h">Team Management</h2>
+          <p class="admin-sub">Add, edit, reorder, or deactivate team members.</p>
+          <button class="btn btn-dark" id="addTeamBtn" style="margin-bottom:20px;">+ Add Team Member</button>
+          <div id="teamRows"></div>
+
+          <div class="admin-panel" id="teamFormPanel" style="display:none;">
+            <h3 id="teamFormTitle">Add Team Member</h3>
+            <input type="hidden" id="f_teamId">
+            <div class="upload-box" id="teamUploadBox">
+              <img id="teamPreview" style="display:none;">
+              <div id="teamUploadPrompt"><div class="up-btn">Upload Photo</div></div>
+              <input type="file" id="teamFile" accept="image/*">
+            </div>
+            <div class="aform two" style="margin-top:20px;">
+              <div><label>Name</label><input type="text" id="f_teamName"></div>
+              <div><label>Position</label><input type="text" id="f_teamRole"></div>
+              <div class="full"><label>Biography</label><textarea id="f_teamBio" rows="3"></textarea></div>
+              <div><label>LinkedIn URL</label><input type="text" id="f_teamLi"></div>
+              <div><label>X (Twitter) URL</label><input type="text" id="f_teamX"></div>
+              <div><label>Email</label><input type="text" id="f_teamEmail"></div>
+              <div><label>Display Order</label><input type="number" id="f_teamOrder" value="1"></div>
+              <div><label>Status</label>
+                <select id="f_teamActive"><option value="1">Active</option><option value="0">Inactive</option></select>
+              </div>
+            </div>
+            <div class="admin-actions">
+              <button class="btn btn-dark" id="teamSave">Save Member</button>
+              <button class="btn btn-outline" id="teamCancel">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-view" id="view-services">
+          <h2 class="admin-h">Services Management</h2>
+          <div class="admin-section-actions"><p class="admin-sub">Manage the services shown on your public website.</p><button class="btn btn-dark" id="addServiceBtn">+ Add Service</button></div>
+          <div id="serviceRows"></div>
+          <div class="admin-panel" id="serviceFormPanel" style="display:none;">
+            <h3 id="serviceFormTitle">Add Service</h3><input type="hidden" id="f_serviceId">
+            <div class="aform two">
+              <div><label>Service Name / Title</label><input type="text" id="f_serviceTitle"></div>
+              <div><label>Display Order</label><input type="number" id="f_serviceOrder" min="1" value="1"></div>
+              <div class="full"><label>Short Description</label><textarea id="f_serviceDescription" rows="3"></textarea></div>
+              <div><label>Icon SVG Path</label><input type="text" id="f_serviceIcon" placeholder="&lt;path d=...&gt;"></div>
+              <div><label>Icon Image URL (optional)</label><input type="url" id="f_serviceImage" placeholder="https://..."></div>
+              <div><label>Service URL</label><input type="url" id="f_serviceUrl" placeholder="#contact"></div>
+              <div><label>Status</label><select id="f_serviceActive"><option value="1">Enabled</option><option value="0">Disabled</option></select></div>
+            </div>
+            <div class="admin-actions"><button class="btn btn-dark" id="serviceSave">Save Service</button><button class="btn btn-outline" id="serviceCancel">Cancel</button></div>
+          </div>
+        </div>
+
+        <div class="admin-view" id="view-footer">
+          <h2 class="admin-h">Footer Management</h2>
+          <div class="admin-section-actions"><p class="admin-sub">Add, edit, reorder, and publish footer categories and links.</p><button class="btn btn-dark" id="addFooterBtn">+ Add Footer Link</button></div>
+          <div id="footerRows"></div>
+          <div class="admin-panel" id="footerFormPanel" style="display:none;">
+            <h3 id="footerFormTitle">Add Footer Link</h3><input type="hidden" id="f_footerId">
+            <div class="aform two">
+              <div><label>Category</label><input type="text" id="f_footerCategory" placeholder="Services"></div>
+              <div><label>Link Text</label><input type="text" id="f_footerText"></div>
+              <div><label>Link URL</label><input type="url" id="f_footerUrl" placeholder="#services"></div>
+              <div><label>Related Service (optional)</label><select id="f_footerService"><option value="">No linked service</option></select></div>
+              <div><label>Display Order</label><input type="number" id="f_footerOrder" min="1" value="1"></div>
+              <div><label>Status</label><select id="f_footerActive"><option value="1">Enabled</option><option value="0">Disabled</option></select></div>
+            </div>
+            <div class="admin-actions"><button class="btn btn-dark" id="footerSave">Save Footer Link</button><button class="btn btn-outline" id="footerCancel">Cancel</button></div>
+          </div>
+        </div>
+
+        <div class="admin-view" id="view-inquiries">
+          <h2 class="admin-h">Consultation Inquiries</h2>
+          <p class="admin-sub">Submitted consultation requests are visible only inside the authenticated admin panel.</p>
+          <div id="inquiryRows"></div>
+        </div>
+
+        <div class="admin-view" id="view-content">
+          <h2 class="admin-h">Content</h2>
+          <p class="admin-sub">Insights and FAQ content are managed in the site's source content for now.</p>
+          <div class="admin-panel"><h3>Managed Content</h3><p style="font-size:13.5px;color:var(--gray-dark)">Services and Footer links are managed dynamically in their dedicated admin sections. Insights and FAQ remain source-managed.</p></div>
+        </div>
+
+        <div class="admin-view" id="view-settings">
+          <h2 class="admin-h">Settings</h2>
+          <p class="admin-sub">Admin session and data controls.</p>
+          <div class="admin-panel">
+            <h3>Reset Demo Data</h3>
+            <p style="font-size:13.5px;color:var(--gray-dark);margin-bottom:16px;">Restores CEO and Team content to the original placeholders.</p>
+            <button class="btn btn-outline" id="resetDataBtn">Reset to Defaults</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-back" id="deleteModal">
+  <div class="modal">
+    <h4>Remove this item?</h4>
+    <p>This will remove the item from the public website. This can't be undone from here.</p>
+    <div class="btns"><button class="btn btn-outline" id="cancelDelete">Cancel</button><button class="btn btn-dark" id="confirmDelete" style="background:#C0392B;border-color:#C0392B;">Delete</button></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script>
+/* ============================================================
+   FIREBASE CONFIG — Replace with your actual Firebase project config.
+   Find it in: Firebase Console > Project Settings > Your Apps > CDN
+   ============================================================ */
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "trustguarddigital-74e6c.firebaseapp.com",
+    projectId: "trustguarddigital-74e6c",
+    storageBucket: "trustguarddigital-74e6c.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  const storage = firebase.storage();
+  const auth = firebase.auth();
+</script>
+<script>
+/* ============================================================
+   ICONS / DATA
+============================================================ */
+const svgIcon = (path) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">${path}</svg>`;
+
+const protectItems = [
+  ['Search Results', '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>'],
+  ['Reviews', '<path d="M12 17l-6 3 1.2-6.6L2 9l6.7-1L12 2l3.3 6L22 9l-5.2 4.4L18 20z"/>'],
+  ['Social Profiles', '<circle cx="12" cy="8" r="3"/><path d="M5 21c0-4 3-6 7-6s7 2 7 6"/>'],
+  ['Photos', '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 17l-5-5-4 4-3-3-4 4"/>'],
+  ['Videos', '<rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 10l4-2v8l-4-2"/>'],
+  ['Brand Mentions', '<path d="M4 4h16v10H8l-4 4z"/>'],
+  ['Digital Identity', '<circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/>'],
+  ['Online Profiles', '<circle cx="12" cy="7" r="4"/><path d="M4 21c0-5 4-8 8-8s8 3 8 8"/>'],
+  ['Brand Information', '<path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/>'],
+  ['Website Reputation', '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/>']
+];
+
+const DEFAULT_SERVICES = [
+  {id:'s1', num:'01', title:'AI-Powered Infringement Monitoring', description:'Our AI-assisted monitoring system continuously scans the web to detect potential copyright infringement and unauthorized use of your content.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:1},
+  {id:'s2', num:'02', title:'Website Copyright Protection', description:'Identify and report stolen content published on unauthorized websites worldwide. We handle documentation and takedown requests.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:2},
+  {id:'s3', num:'03', title:'Search Engine Removal (DMCA & De-indexing)', description:'Remove infringing, harmful, or outdated links from search engines like Google and Bing through proper DMCA and de-indexing procedures.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:3},
+  {id:'s4', num:'04', title:'Social Media Content Protection', description:'Detect and remove unauthorized use of your content across major social platforms including Facebook, Instagram, TikTok, and Twitter/X.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:4},
+  {id:'s5', num:'05', title:'Brand Protection & AI Monitoring', description:'Protect your brand reputation from impersonation, misuse, and abuse using AI-driven alerts and expert review.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:5},
+  {id:'s6', num:'06', title:'Impersonation Protection', description:'Identify and remove fake social media profiles, pages, and websites impersonating your brand or identity.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:6},
+  {id:'s7', num:'07', title:'Content & Article Removal', description:'Remove copied, plagiarized, or unauthorized articles and content published without permission.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:7},
+  {id:'s8', num:'08', title:'Leaked Content Protection', description:'Protect private, confidential, or sensitive content that has been published or leaked online. Assist with urgent removal requests.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:8},
+  {id:'s9', num:'09', title:'Online Reputation Management (ORM)', description:'Reduce the visibility of negative, defamatory, or harmful content using legal policy-based, AI-assisted reputation strategy.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:9},
+  {id:'s10', num:'10', title:'Continuous Monitoring (Free Trial)', description:'24/7 monitoring powered by AI and expert review to detect new infringements, misuse, and reputation threats early.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:10},
+  {id:'s11', num:'11', title:'Legal Support & Case Evaluation', description:'Expert guidance for complex copyright, trademark, reputation, and privacy cases requiring legal strategy and documentation.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:11},
+  {id:'s12', num:'12', title:'Application Protection', description:'Detect unauthorized or pirated copies of your mobile and web applications published on app stores and distribution platforms.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:12},
+  {id:'s13', num:'13', title:'Trademark Monitoring', description:'Monitor the web for trademark misuse and counterfeit activity using AI-assisted detection.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:13},
+  {id:'s14', num:'14', title:'Anti-Counterfeiting Protection', description:'Identify counterfeit products and fake sellers across e-commerce marketplaces using AI-assisted detection.', icon:'<path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/>', url:'#contact', active:true, order:14}
+];
+
+const DEFAULT_FOOTER = [
+  {id:'f1', category:'Brand Protection Solutions', text:'AI Brand Monitoring', url:'#services', serviceId:'s5', active:true, order:1},
+  {id:'f2', category:'Brand Protection Solutions', text:'Trademark Monitoring', url:'#services', serviceId:'s13', active:true, order:2},
+  {id:'f3', category:'Brand Protection Solutions', text:'Impersonation Protection', url:'#services', serviceId:'s6', active:true, order:3},
+  {id:'f4', category:'Brand Protection Solutions', text:'Anti-Counterfeiting Solutions', url:'#services', serviceId:'s14', active:true, order:4},
+  {id:'f5', category:'Content Protection Solutions', text:'Copyright Protection', url:'#services', serviceId:'s2', active:true, order:1},
+  {id:'f6', category:'Content Protection Solutions', text:'DMCA Takedown Service', url:'#services', serviceId:'s3', active:true, order:2},
+  {id:'f7', category:'Content Protection Solutions', text:'Leaked Content Removal', url:'#services', serviceId:'s8', active:true, order:3},
+  {id:'f8', category:'Content Protection Solutions', text:'Search Engine De-indexing', url:'#services', serviceId:'s3', active:true, order:4},
+  {id:'f9', category:'Use Cases', text:'Brand Defamation Removal', url:'#cases', active:true, order:1},
+  {id:'f10', category:'Use Cases', text:'Fake Profile & Impersonation Removal', url:'#cases', active:true, order:2},
+  {id:'f11', category:'Use Cases', text:'Copyright Image & Video Removal', url:'#cases', active:true, order:3},
+  {id:'f12', category:'Use Cases', text:'Negative Article Removal', url:'#cases', active:true, order:4},
+  {id:'f13', category:'Quick Links', text:'About Us', url:'#about', active:true, order:1},
+  {id:'f14', category:'Quick Links', text:'Case Studies', url:'#cases', active:true, order:2},
+  {id:'f15', category:'Quick Links', text:'Blog', url:'#insights', active:true, order:3},
+  {id:'f16', category:'Quick Links', text:'FAQ', url:'#faq', active:true, order:4},
+  {id:'f17', category:'More Resources', text:'Request Free Analysis', url:'#contact', active:true, order:1},
+  {id:'f18', category:'More Resources', text:'Privacy Policy', url:'#', active:true, order:2},
+  {id:'f19', category:'More Resources', text:'Terms & Conditions', url:'#', active:true, order:3},
+  {id:'f20', category:'More Resources', text:'Contact Us', url:'#contact', active:true, order:4}
+  ,{id:'f21', category:'Social Media', text:'f', url:'#', active:true, order:1}
+  ,{id:'f22', category:'Social Media', text:'𝕏', url:'#', active:true, order:2}
+  ,{id:'f23', category:'Social Media', text:'in', url:'#', active:true, order:3}
+  ,{id:'f24', category:'Social Media', text:'◎', url:'#', active:true, order:4}
+];
+
+const insights = [
+  ['Online Reputation','How to Protect Your Company\'s Online Reputation'],
+  ['Digital Privacy','What To Do When Unauthorized Content Appears Online'],
+  ['Brand Protection','How Businesses Can Monitor Their Digital Reputation'],
+  ['Review Management','Understanding Online Review Disputes'],
+  ['Digital Identity','How to Protect Your Brand From Online Impersonation'],
+  ['Online Safety','Building a Resilient Digital Presence From the Ground Up']
+];
+
+const faqs = [
+  ['Can you remove anything from Google?','Whether content can be removed depends on the content itself, the circumstances, ownership, and the applicable platform policies and laws. We can assist with appropriate reporting and removal-request processes, but we cannot guarantee removal of any specific content.'],
+  ['Can you remove negative reviews?','We can assess reviews that appear fraudulent, abusive, defamatory, or in violation of a platform\'s policies, and assist with legitimate dispute and reporting processes. We do not promise removal of legitimate reviews, even negative ones.'],
+  ['Can you help with unauthorized photos?','Yes. We can help identify potentially problematic images and assist with appropriate reporting or takedown-request processes through the relevant platforms.'],
+  ['Can you help with videos and social media posts?','Yes, when appropriate. We can help document and report problematic content through relevant platform procedures.'],
+  ['Do you guarantee removal?','No. Results depend on the platform, the available evidence, the nature of the content, applicable policies and laws, and the specific circumstances of each case.'],
+  ['Is my information confidential?','Yes. Client information is handled discreetly and used only to evaluate and respond to your inquiry and, where engaged, to carry out the agreed work on your behalf.']
+];
+
+function fillGrids(){
+  document.getElementById('protectGrid').innerHTML = protectItems.map(([name,icon])=>`
+    <div class="protect-item">${svgIcon(icon)}<span>${name}</span></div>`).join('');
+
+  let servicesExpanded = false;
+  const svcGrid = document.getElementById('svcGrid');
+  const toggleBtn = document.getElementById('servicesToggleBtn');
+
+  function renderServices(){
+    const activeServices = state.services.filter(s=>s.active).sort((a,b)=>a.order-b.order);
+    svcGrid.innerHTML = activeServices.map((service, index)=>`
+      <div class="card svc-card reveal ${index >= 5 && !servicesExpanded ? 'is-collapsed' : ''}">
+        <span class="svc-num">${String(service.order).padStart(2,'0')}</span>
+        <div class="icon">${service.image ? `<img src="${service.image}" alt="" style="width:20px;height:20px;object-fit:contain;">` : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${service.icon || DEFAULT_SERVICES[0].icon}</svg>`}</div>
+        <h4>${service.title}</h4><p>${service.description}</p>
+        <a class="svc-learn" href="${service.url || '#contact'}">Learn more ${svgIcon('<path d="M5 12h14M13 6l6 6-6 6"/>')}</a>
+      </div>`).join('');
+
+    const revealEls = svcGrid.querySelectorAll('.reveal');
+    revealEls.forEach(el => {
+      el.classList.remove('in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      observer.observe(el);
+    });
+
+    toggleBtn.style.display = activeServices.length > 5 ? 'inline-flex' : 'none';
+    toggleBtn.textContent = servicesExpanded ? 'Show Less' : 'See More Services';
+    toggleBtn.setAttribute('aria-expanded', String(servicesExpanded));
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    servicesExpanded = !servicesExpanded;
+    renderServices();
+  });
+
+  renderServices();
+
+  document.getElementById('insightsGrid').innerHTML = insights.map(([cat,title])=>`
+    <div class="card reveal"><span class="post-cat">${cat}</span><h4 class="post-title">${title}</h4></div>`).join('');
+
+  document.getElementById('faqList').innerHTML = faqs.map(([q,a],i)=>`
+    <div class="faq-item" data-i="${i}">
+      <button class="faq-q">${q} ${svgIcon('<path d="M12 5v14M5 12h14"/>')}</button>
+      <div class="faq-a"><p>${a}</p></div>
+    </div>`).join('');
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item = btn.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(f=>{f.classList.remove('open');f.querySelector('.faq-a').style.maxHeight=null;});
+      if(!wasOpen){item.classList.add('open');const a=item.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px';}
+    });
+  });
+}
+
+/* ============================================================
+   NAV BEHAVIOR
+============================================================ */
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled', window.scrollY>10);});
+const hamBtn = document.getElementById('hamBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+hamBtn.addEventListener('click',()=>{
+  const open = mobileMenu.classList.toggle('open');
+  hamBtn.classList.toggle('open',open);
+  hamBtn.setAttribute('aria-expanded',open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+document.querySelectorAll('.mnav').forEach(a=>a.addEventListener('click',()=>{
+  mobileMenu.classList.remove('open');hamBtn.classList.remove('open');document.body.style.overflow='';
+}));
+
+
+
+/* reveal on scroll */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:0.12});
+revealEls.forEach(el=>io.observe(el));
+// re-run for dynamically injected cards
+setTimeout(()=>{document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));},50);
+
+/* ============================================================
+   CONTACT FORM
+============================================================ */
+const form = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formStatus = document.getElementById('formStatus');
+form.addEventListener('submit',async (e)=>{
+  e.preventDefault();
+  let valid = true;
+  form.querySelectorAll('.field[data-req]').forEach(f=>{
+    const input = f.querySelector('input,select,textarea');
+    let ok = input.value.trim().length>0;
+    if(f.hasAttribute('data-email') && ok){ ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim()); }
+    f.classList.toggle('error', !ok);
+    if(!ok) valid = false;
+  });
+  if(!valid) return;
+  submitBtn.classList.add('loading');
+  submitBtn.disabled = true;
+  const fields = Object.fromEntries(new FormData(form).entries());
+  const inquiry = {createdAt:new Date().toISOString(), ...fields};
+  try{
+    const ref = await db.collection('inquiries').add(inquiry);
+    inquiry.id = ref.id;
+    state.inquiries.unshift(inquiry);
+    renderAdminInquiryRows();
+    logUpdate('New consultation inquiry from '+inquiry.name);
+  }catch(e){
+    console.error(e);
+    showToast('Failed to submit inquiry. Please try again.');
+    submitBtn.classList.remove('loading');
+    submitBtn.disabled = false;
+    return;
+  }
+  setTimeout(()=>{
+    submitBtn.classList.remove('loading');
+    submitBtn.disabled = false;
+    form.style.display='none';
+    formStatus.classList.add('show');
+  },1100);
+});
+
+/* ============================================================
+   FIREBASE-BACKED CMS  (CEO + TEAM + SERVICES + FOOTER)
+   All data is persisted in Firestore and images in Firebase Storage.
+============================================================ */
+const DEFAULT_CEO = {
+  name:'[CEO Name]', title:'Founder & Chief Executive Officer',
+  bio:'Biography to be added by the TrustGuard Digital team.',
+  message:'Digital reputation is built over years and can be affected in moments. We founded TrustGuard Digital to give people and businesses a calm, structured, and honest way to understand what\'s happening online and respond to it — with transparency about what\'s realistic, and confidentiality about what matters to you.',
+  linkedin:'', x:'', email:'', photo:''
+};
+const DEFAULT_TEAM = [
+  {id:'t1', name:'[Name]', role:'Chief Executive Officer', bio:'', linkedin:'', x:'', email:'', order:1, active:true, photo:''},
+  {id:'t2', name:'[Name]', role:'Head of Reputation Management', bio:'', linkedin:'', x:'', email:'', order:2, active:true, photo:''},
+  {id:'t3', name:'[Name]', role:'Digital Protection Specialist', bio:'', linkedin:'', x:'', email:'', order:3, active:true, photo:''}
+];
+let state = { ceo: {...DEFAULT_CEO}, team: JSON.parse(JSON.stringify(DEFAULT_TEAM)), services: JSON.parse(JSON.stringify(DEFAULT_SERVICES)), footer: JSON.parse(JSON.stringify(DEFAULT_FOOTER)), inquiries: [] };
+let dbLoaded = false;
+
+async function seedDefaults(){
+  const snap = await db.collection('cms').doc('ceo').get();
+  if(!snap.exists){
+    await db.collection('cms').doc('ceo').set(DEFAULT_CEO);
+    await db.collection('cms').doc('services').set({items: DEFAULT_SERVICES});
+    await db.collection('cms').doc('footer').set({items: DEFAULT_FOOTER});
+    await db.collection('cms').doc('team').set({items: DEFAULT_TEAM});
+    await db.collection('cms').doc('content').set({insights, faqs});
+  }
+}
+
+async function loadState(){
+  try{
+    await seedDefaults();
+    const ceoSnap = await db.collection('cms').doc('ceo').get();
+    if(ceoSnap.exists) state.ceo = ceoSnap.data();
+    const servicesSnap = await db.collection('cms').doc('services').get();
+    if(servicesSnap.exists) state.services = servicesSnap.data().items || [];
+    const footerSnap = await db.collection('cms').doc('footer').get();
+    if(footerSnap.exists) state.footer = footerSnap.data().items || [];
+    const teamSnap = await db.collection('cms').doc('team').get();
+    if(teamSnap.exists) state.team = teamSnap.data().items || [];
+    const inquiriesSnap = await db.collection('inquiries').orderBy('createdAt','desc').get();
+    state.inquiries = inquiriesSnap.docs.map(d => ({id:d.id, ...d.data()}));
+    dbLoaded = true;
+  }catch(e){
+    console.error('Failed to load from Firestore:', e);
+    showToast('Unable to load saved data. Using defaults.');
+  }
+  fillGrids(); renderFooter(); renderCeo(); renderTeam(); renderAdminCeoForm(); renderAdminTeamRows(); renderAdminServiceRows(); renderAdminFooterRows(); renderAdminInquiryRows(); updateFooterServiceOptions(); updateAdminStats();
+}
+async function saveCeo(){
+  try{ await db.collection('cms').doc('ceo').set(state.ceo); showToast('CEO profile saved successfully.'); }
+  catch(e){ console.error(e); showToast('Failed to save CEO profile.'); throw e; }
+}
+async function saveTeam(){
+  try{ await db.collection('cms').doc('team').set({items: state.team}); showToast('Team saved successfully.'); }
+  catch(e){ console.error(e); showToast('Failed to save team.'); throw e; }
+}
+async function saveServices(){
+  try{ await db.collection('cms').doc('services').set({items: state.services}); showToast('Services saved successfully.'); }
+  catch(e){ console.error(e); showToast('Failed to save services.'); throw e; }
+}
+async function saveFooter(){
+  try{ await db.collection('cms').doc('footer').set({items: state.footer}); showToast('Footer saved successfully.'); }
+  catch(e){ console.error(e); showToast('Failed to save footer.'); throw e; }
+}
+async function saveInquiries(){
+}
+function escapeHtml(value){
+  return String(value ?? '').replace(/[&<>"']/g, character=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+}
+function renderAdminInquiryRows(){
+  const rows=document.getElementById('inquiryRows'); if(!rows) return;
+  rows.innerHTML=state.inquiries.map(inquiry=>{
+    const date=new Date(inquiry.createdAt).toLocaleString();
+    return `<article class="inquiry-row"><div class="inquiry-head"><div><h3>${escapeHtml(inquiry.name || 'Unnamed inquiry')}</h3><p>${escapeHtml(date)}</p></div><button class="rowbtn inquiry-delete" data-inquiry-del="${escapeHtml(inquiry.id)}">Delete</button></div><div class="inquiry-grid"><div class="inquiry-field"><strong>Email</strong><span>${escapeHtml(inquiry.email)}</span></div><div class="inquiry-field"><strong>Company</strong><span>${escapeHtml(inquiry.company || 'Not provided')}</span></div><div class="inquiry-field"><strong>Phone</strong><span>${escapeHtml(inquiry.phone || 'Not provided')}</span></div><div class="inquiry-field"><strong>Website</strong><span>${escapeHtml(inquiry.website || 'Not provided')}</span></div><div class="inquiry-field"><strong>Protection Needed</strong><span>${escapeHtml(inquiry.type)}</span></div><div class="inquiry-field"><strong>Preferred Contact</strong><span>${escapeHtml(inquiry.contactMethod)}</span></div><div class="inquiry-field full"><strong>Brief Description</strong><p>${escapeHtml(inquiry.details)}</p></div></div></article>`;
+  }).join('') || '<div class="admin-panel"><p style="font-size:13.5px;color:var(--gray-dark);">No consultation inquiries yet.</p></div>';
+  rows.querySelectorAll('[data-inquiry-del]').forEach(button=>button.addEventListener('click',()=>openDeleteModal(button.dataset.inquiryDel,'inquiry')));
+}
+
+function renderFooter(){
+  const groups = {};
+  state.footer.filter(link=>link.active).sort((a,b)=>a.order-b.order).forEach(link=>{
+    if(!groups[link.category]) groups[link.category]=[];
+    const service = link.serviceId ? state.services.find(s=>s.id===link.serviceId) : null;
+    if(!link.serviceId || service?.active) groups[link.category].push({ ...link, text:service?.title || link.text, url:service?.url || link.url });
+  });
+  const topCategories = Object.keys(groups).filter(category=>!['Quick Links','More Resources','Social Media'].includes(category));
+  const topColumns = document.getElementById('footerTopColumns');
+  if(topColumns) topColumns.innerHTML = topCategories.map(category=>`<div class="foot-col"><h4>${category}</h4><ul>${groups[category].map(link=>`<li><a href="${link.url || '#'}">${link.text}</a></li>`).join('')}</ul></div>`).join('');
+  const targets = { 'Quick Links':'footQuickLinks', 'More Resources':'footResourceLinks' };
+  Object.entries(targets).forEach(([category,id])=>{
+    const target = document.getElementById(id); if(!target) return;
+    target.innerHTML = (groups[category] || []).map(link=>`<li><a href="${link.url || '#'}">${link.text}</a></li>`).join('');
+  });
+  const socialTarget = document.getElementById('footSocialLinks');
+  if(socialTarget) socialTarget.innerHTML = (groups['Social Media'] || []).map(link=>`<a href="${link.url || '#'}" title="${link.text}" aria-label="${link.text}">${link.text}</a>`).join('');
+  const privacy = state.footer.find(link=>link.active && /privacy/i.test(link.text));
+  const terms = state.footer.find(link=>link.active && /terms/i.test(link.text));
+  const privacyLink = document.getElementById('footerPrivacyLink'); const termsLink = document.getElementById('footerTermsLink');
+  if(privacyLink){privacyLink.href=privacy?.url||'#';privacyLink.textContent=privacy?.text||'Privacy Policy';}
+  if(termsLink){termsLink.href=terms?.url||'#';termsLink.textContent=terms?.text||'Terms & Conditions';}
+}
+
+function renderCeo(){
+  document.getElementById('ceoName').textContent = state.ceo.name || '[CEO Name]';
+  document.getElementById('ceoTitle').textContent = state.ceo.title || 'Founder & Chief Executive Officer';
+  document.getElementById('ceoBio').textContent = state.ceo.bio || '';
+  document.getElementById('ceoMessage').textContent = state.ceo.message || '';
+  document.getElementById('ceoMsgName').textContent = state.ceo.name || '[CEO Name]';
+  const box = document.getElementById('ceoPhotoBox');
+  box.innerHTML = state.ceo.photo ? `<img src="${state.ceo.photo}" alt="${state.ceo.name} portrait">` : '<div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"/></svg></div><span class="ph-label">Photo Placeholder</span>';
+  const social = document.getElementById('ceoSocial');
+  social.innerHTML = '';
+  if(state.ceo.linkedin) social.innerHTML += `<a href="${state.ceo.linkedin}" target="_blank" rel="noopener">${svgIcon('<rect x="3" y="9" width="4" height="10"/><circle cx="5" cy="5" r="1.5"/><path d="M11 20v-6a3 3 0 016 0v6M11 20V9"/>')}</a>`;
+  if(state.ceo.x) social.innerHTML += `<a href="${state.ceo.x}" target="_blank" rel="noopener">${svgIcon('<path d="M4 4l16 16M20 4L4 20"/>')}</a>`;
+  if(state.ceo.email) social.innerHTML += `<a href="mailto:${state.ceo.email}">${svgIcon('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>')}</a>`;
+}
+
+function renderTeam(){
+  const grid = document.getElementById('teamGrid');
+  const active = state.team.filter(t=>t.active).sort((a,b)=>a.order-b.order);
+  grid.innerHTML = active.map(t=>`
+    <div class="card team-card reveal in">
+      <div class="team-photo">${t.photo?`<img src="${t.photo}" alt="${t.name} portrait">`:'<div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"/></svg></div><span class="ph-label">Photo Placeholder</span>'}</div>
+      <div class="team-body">
+        <h4>${t.name}</h4><span class="team-role">${t.role}</span>
+        <p>${t.bio||''}</p>
+        <div class="team-social">
+          ${t.linkedin?`<a href="${t.linkedin}" target="_blank" rel="noopener">${svgIcon('<rect x="3" y="9" width="4" height="10"/><circle cx="5" cy="5" r="1.5"/><path d="M11 20v-6a3 3 0 016 0v6M11 20V9"/>')}</a>`:''}
+          ${t.x?`<a href="${t.x}" target="_blank" rel="noopener">${svgIcon('<path d="M4 4l16 16M20 4L4 20"/>')}</a>`:''}
+          ${t.email?`<a href="mailto:${t.email}">${svgIcon('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>')}</a>`:''}
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+/* ---- Firebase image upload helper ---- */
+async function uploadImage(file, storagePath){
+  const ref = storage.ref(storagePath);
+  await ref.put(file);
+  return await ref.getDownloadURL();
+}
+
+/* ---- ADMIN: CEO form ---- */
+function renderAdminCeoForm(){
+  f_ceoName.value = state.ceo.name; f_ceoTitle.value = state.ceo.title;
+  f_ceoBio.value = state.ceo.bio; f_ceoMsg.value = state.ceo.message;
+  f_ceoLi.value = state.ceo.linkedin; f_ceoX.value = state.ceo.x; f_ceoEmail.value = state.ceo.email;
+  if(state.ceo.photo){ ceoPreview.src = state.ceo.photo; ceoPreview.style.display='block'; ceoUploadPrompt.style.display='none'; }
+  else { ceoPreview.style.display='none'; ceoUploadPrompt.style.display='block'; }
+}
+document.getElementById('ceoUploadBox').addEventListener('click',()=>document.getElementById('ceoFile').click());
+let ceoPendingFile = null;
+document.getElementById('ceoFile').addEventListener('change',(e)=>{
+  const file = e.target.files[0]; if(!file) return;
+  if(file.size > 5*1024*1024){ showToast('Image too large — max 5MB.'); return; }
+  ceoPendingFile = file;
+  const url = URL.createObjectURL(file);
+  ceoPreview.src = url; ceoPreview.style.display='block'; ceoUploadPrompt.style.display='none';
+});
+document.getElementById('ceoSave').addEventListener('click', async ()=>{
+  let photo = state.ceo.photo;
+  if(ceoPendingFile){
+    try{
+      showToast('Uploading photo...');
+      photo = await uploadImage(ceoPendingFile, 'images/ceo/photo.jpg');
+    }catch(err){
+      console.error(err);
+      showToast('Failed to upload photo.');
+      return;
+    }
+  }
+  state.ceo = {
+    ...state.ceo,
+    name:f_ceoName.value.trim()||'[CEO Name]', title:f_ceoTitle.value.trim(),
+    bio:f_ceoBio.value.trim(), message:f_ceoMsg.value.trim(),
+    linkedin:f_ceoLi.value.trim(), x:f_ceoX.value.trim(), email:f_ceoEmail.value.trim(),
+    photo
+  };
+  try{
+    await saveCeo(); renderCeo(); updateAdminStats(); logUpdate('CEO profile updated');
+  }catch(e){ /* error already shown */ }
+});
+document.getElementById('ceoCancel').addEventListener('click', renderAdminCeoForm);
+
+/* ---- ADMIN: Team management ---- */
+function renderAdminTeamRows(){
+  const rows = document.getElementById('teamRows');
+  const sorted = [...state.team].sort((a,b)=>a.order-b.order);
+  rows.innerHTML = sorted.map(t=>`
+    <div class="team-row" data-id="${t.id}">
+      ${t.photo?`<img src="${t.photo}">`:`<div class="ph"></div>`}
+      <div class="info"><b>${t.name}</b><span>${t.role} · Order ${t.order}</span></div>
+      <span class="badge ${t.active?'on':''}">${t.active?'Active':'Inactive'}</span>
+      <div class="rowbtns">
+        <button class="rowbtn" data-edit="${t.id}">Edit</button>
+        <button class="rowbtn danger" data-del="${t.id}">Delete</button>
+      </div>
+    </div>`).join('') || '<p style="color:var(--gray);font-size:13.5px;">No team members yet.</p>';
+
+  rows.querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click',()=>openTeamForm(b.dataset.edit)));
+  rows.querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click',()=>openDeleteModal(b.dataset.del)));
+}
+function openTeamForm(id){
+  const panel = document.getElementById('teamFormPanel');
+  panel.style.display='block'; panel.scrollIntoView({behavior:'smooth',block:'center'});
+  teamPreview.dataset.pending='';
+  if(id){
+    const t = state.team.find(x=>x.id===id);
+    teamFormTitle.textContent='Edit Team Member'; f_teamId.value=t.id;
+    f_teamName.value=t.name; f_teamRole.value=t.role; f_teamBio.value=t.bio||'';
+    f_teamLi.value=t.linkedin||''; f_teamX.value=t.x||''; f_teamEmail.value=t.email||'';
+    f_teamOrder.value=t.order; f_teamActive.value = t.active ? '1':'0';
+    if(t.photo){teamPreview.src=t.photo;teamPreview.style.display='block';teamUploadPrompt.style.display='none';}
+    else{teamPreview.style.display='none';teamUploadPrompt.style.display='block';}
+  } else {
+    teamFormTitle.textContent='Add Team Member'; f_teamId.value='';
+    f_teamName.value=''; f_teamRole.value=''; f_teamBio.value='';
+    f_teamLi.value=''; f_teamX.value=''; f_teamEmail.value='';
+    f_teamOrder.value = state.team.length+1; f_teamActive.value='1';
+    teamPreview.style.display='none'; teamUploadPrompt.style.display='block';
+  }
+}
+document.getElementById('addTeamBtn').addEventListener('click',()=>openTeamForm(null));
+document.getElementById('teamCancel').addEventListener('click',()=>{ document.getElementById('teamFormPanel').style.display='none'; });
+document.getElementById('teamUploadBox').addEventListener('click',()=>document.getElementById('teamFile').click());
+let teamPendingFile = null;
+document.getElementById('teamFile').addEventListener('change',(e)=>{
+  const file = e.target.files[0]; if(!file) return;
+  if(file.size > 5*1024*1024){ showToast('Image too large — max 5MB.'); return; }
+  teamPendingFile = file;
+  const url = URL.createObjectURL(file);
+  teamPreview.src=url; teamPreview.style.display='block'; teamUploadPrompt.style.display='none';
+});
+document.getElementById('teamSave').addEventListener('click', async ()=>{
+  if(!f_teamName.value.trim()){ showToast('Name is required.'); return; }
+  const id = f_teamId.value || 't'+Date.now();
+  let photo = teamPreview.dataset.pending || (state.team.find(t=>t.id===id)?.photo || '');
+  if(teamPendingFile){
+    try{
+      showToast('Uploading photo...');
+      photo = await uploadImage(teamPendingFile, 'images/team/' + id + '.jpg');
+    }catch(err){
+      console.error(err);
+      showToast('Failed to upload photo.');
+      return;
+    }
+  }
+  const record = {
+    id, name:f_teamName.value.trim(), role:f_teamRole.value.trim(), bio:f_teamBio.value.trim(),
+    linkedin:f_teamLi.value.trim(), x:f_teamX.value.trim(), email:f_teamEmail.value.trim(),
+    order: parseInt(f_teamOrder.value)||1, active: f_teamActive.value==='1',
+    photo
+  };
+  const idx = state.team.findIndex(t=>t.id===id);
+  if(idx>-1) state.team[idx]=record; else state.team.push(record);
+  try{
+    await saveTeam(); renderTeam(); renderAdminTeamRows(); updateAdminStats();
+    logUpdate((idx>-1?'Updated':'Added')+' team member: '+record.name);
+    document.getElementById('teamFormPanel').style.display='none';
+  }catch(e){ /* error already shown */ }
+});
+
+/* ---- ADMIN: Services management ---- */
+function validUrl(value){
+  if(!value) return true;
+  if(value.startsWith('#')) return true;
+  try{ const url = new URL(value); return ['http:','https:','mailto:'].includes(url.protocol); }catch(e){ return false; }
+}
+function renderAdminServiceRows(){
+  const rows = document.getElementById('serviceRows');
+  const sorted = [...state.services].sort((a,b)=>a.order-b.order);
+  rows.innerHTML = sorted.map(service=>`
+    <div class="manage-row" data-id="${service.id}">
+      <div class="info"><b>${service.title}</b><span>${service.description}</span></div>
+      <label class="switch"><input type="checkbox" data-service-toggle="${service.id}" ${service.active?'checked':''}><i></i><span>${service.active?'Enabled':'Disabled'}</span></label>
+      <span style="font-size:12px;color:var(--gray);">Order ${service.order}</span>
+      <div class="rowbtns"><button class="rowbtn" data-service-edit="${service.id}">Edit</button><button class="rowbtn danger" data-service-del="${service.id}">Delete</button></div>
+    </div>`).join('') || '<p style="color:var(--gray);font-size:13.5px;">No services yet.</p>';
+  rows.querySelectorAll('[data-service-edit]').forEach(btn=>btn.addEventListener('click',()=>openServiceForm(btn.dataset.serviceEdit)));
+  rows.querySelectorAll('[data-service-del]').forEach(btn=>btn.addEventListener('click',()=>openDeleteModal(btn.dataset.serviceDel,'service')));
+  rows.querySelectorAll('[data-service-toggle]').forEach(input=>input.addEventListener('change',async ()=>{const service=state.services.find(item=>item.id===input.dataset.serviceToggle);if(!service)return;service.active=input.checked;await saveServices();fillGrids();renderAdminServiceRows();renderFooter();showToast('Service status updated.');}));
+}
+function updateFooterServiceOptions(selected=''){
+  const select = document.getElementById('f_footerService'); if(!select) return;
+  select.innerHTML = '<option value="">No linked service</option>' + state.services.map(service=>`<option value="${service.id}">${service.title}</option>`).join('');
+  select.value = selected;
+}
+function openServiceForm(id){
+  const panel=document.getElementById('serviceFormPanel'); panel.style.display='block'; panel.scrollIntoView({behavior:'smooth',block:'center'});
+  const service=id ? state.services.find(item=>item.id===id) : null;
+  serviceFormTitle.textContent=service?'Edit Service':'Add Service'; f_serviceId.value=service?.id||'';
+  f_serviceTitle.value=service?.title||''; f_serviceDescription.value=service?.description||''; f_serviceIcon.value=service?.icon||''; f_serviceImage.value=service?.image||'';
+  f_serviceUrl.value=service?.url||'#contact'; f_serviceOrder.value=service?.order||state.services.length+1; f_serviceActive.value=service?.active?'1':'0';
+}
+document.getElementById('addServiceBtn').addEventListener('click',()=>openServiceForm(null));
+document.getElementById('serviceCancel').addEventListener('click',()=>{document.getElementById('serviceFormPanel').style.display='none';});
+document.getElementById('serviceSave').addEventListener('click',async ()=>{
+  const title=f_serviceTitle.value.trim(), description=f_serviceDescription.value.trim(), url=f_serviceUrl.value.trim();
+  if(!title || !description){showToast('Service title and description are required.');return;}
+  if(!validUrl(url) || !validUrl(f_serviceImage.value.trim())){showToast('Use a valid http(s), mailto, or # URL.');return;}
+  const id=f_serviceId.value||'s'+Date.now(); const existing=state.services.find(service=>service.id===id);
+  const record={id,num:existing?.num||String(parseInt(f_serviceOrder.value)||state.services.length+1).padStart(2,'0'),title,description,icon:f_serviceIcon.value.trim()||DEFAULT_SERVICES[0].icon,image:f_serviceImage.value.trim(),url:url||'#contact',active:f_serviceActive.value==='1',order:parseInt(f_serviceOrder.value)||1};
+  const index=state.services.findIndex(service=>service.id===id); if(index>-1) state.services[index]=record; else state.services.push(record);
+  await saveServices(); fillGrids(); renderAdminServiceRows(); updateFooterServiceOptions(); renderFooter();
+  logUpdate((index>-1?'Updated':'Added')+' service: '+record.title); document.getElementById('serviceFormPanel').style.display='none'; showToast('Service saved.');
+});
+
+/* ---- ADMIN: Footer management ---- */
+function renderAdminFooterRows(){
+  const rows=document.getElementById('footerRows'), groups={};
+  state.footer.forEach(link=>{if(!groups[link.category]) groups[link.category]=[];groups[link.category].push(link);});
+  rows.innerHTML=Object.keys(groups).sort().map(category=>`<div class="footer-category"><h3>${category}</h3>${groups[category].sort((a,b)=>a.order-b.order).map(link=>`<div class="footer-link-row"><div class="link-info"><b>${link.text}</b><small>${link.url||'#'} · Order ${link.order}</small></div><label class="switch"><input type="checkbox" data-footer-toggle="${link.id}" ${link.active?'checked':''}><i></i><span>${link.active?'Enabled':'Disabled'}</span></label><div class="rowbtns"><button class="rowbtn" data-footer-edit="${link.id}">Edit</button><button class="rowbtn danger" data-footer-del="${link.id}">Delete</button></div></div>`).join('')}</div>`).join('') || '<p style="color:var(--gray);font-size:13.5px;">No footer links yet.</p>';
+  rows.querySelectorAll('[data-footer-edit]').forEach(btn=>btn.addEventListener('click',()=>openFooterForm(btn.dataset.footerEdit)));
+  rows.querySelectorAll('[data-footer-del]').forEach(btn=>btn.addEventListener('click',()=>openDeleteModal(btn.dataset.footerDel,'footer')));
+  rows.querySelectorAll('[data-footer-toggle]').forEach(input=>input.addEventListener('change',async ()=>{const link=state.footer.find(item=>item.id===input.dataset.footerToggle);if(!link)return;link.active=input.checked;await saveFooter();renderFooter();renderAdminFooterRows();showToast('Footer link status updated.');}));
+}
+function openFooterForm(id){
+  const panel=document.getElementById('footerFormPanel'); panel.style.display='block'; panel.scrollIntoView({behavior:'smooth',block:'center'});
+  const link=id ? state.footer.find(item=>item.id===id) : null;
+  footerFormTitle.textContent=link?'Edit Footer Link':'Add Footer Link'; f_footerId.value=link?.id||''; f_footerCategory.value=link?.category||''; f_footerText.value=link?.text||''; f_footerUrl.value=link?.url||'#'; f_footerOrder.value=link?.order||1; f_footerActive.value=link?.active?'1':'0'; updateFooterServiceOptions(link?.serviceId||'');
+}
+document.getElementById('addFooterBtn').addEventListener('click',()=>openFooterForm(null));
+document.getElementById('footerCancel').addEventListener('click',()=>{document.getElementById('footerFormPanel').style.display='none';});
+document.getElementById('footerSave').addEventListener('click',async ()=>{
+  const category=f_footerCategory.value.trim(), text=f_footerText.value.trim(), url=f_footerUrl.value.trim(), serviceId=f_footerService.value;
+  if(!category || !text){showToast('Footer category and link text are required.');return;}
+  if(!validUrl(url)){showToast('Use a valid http(s), mailto, or # URL.');return;}
+  const id=f_footerId.value||'f'+Date.now(), index=state.footer.findIndex(link=>link.id===id);
+  const record={id,category,text,url:url||'#',serviceId,active:f_footerActive.value==='1',order:parseInt(f_footerOrder.value)||1};
+  if(index>-1) state.footer[index]=record; else state.footer.push(record);
+  await saveFooter(); renderFooter(); renderAdminFooterRows(); logUpdate((index>-1?'Updated':'Added')+' footer link: '+record.text); document.getElementById('footerFormPanel').style.display='none'; showToast('Footer link saved.');
+});
+
+let pendingDeleteId = null;
+let pendingDeleteKind = 'team';
+function openDeleteModal(id,kind='team'){ pendingDeleteId=id; pendingDeleteKind=kind; document.getElementById('deleteModal').classList.add('show'); }
+document.getElementById('cancelDelete').addEventListener('click',()=>{document.getElementById('deleteModal').classList.remove('show');pendingDeleteId=null;});
+document.getElementById('confirmDelete').addEventListener('click', async ()=>{
+  if(pendingDeleteId){
+    if(pendingDeleteKind==='team'){
+      const removed = state.team.find(t=>t.id===pendingDeleteId); state.team = state.team.filter(t=>t.id!==pendingDeleteId);
+      await saveTeam(); renderTeam(); renderAdminTeamRows(); updateAdminStats(); logUpdate('Removed team member: '+(removed?removed.name:'')); showToast('Team member removed.');
+    } else if(pendingDeleteKind==='service'){
+      const removed = state.services.find(s=>s.id===pendingDeleteId); state.services = state.services.filter(s=>s.id!==pendingDeleteId);
+      state.footer = state.footer.map(link=>link.serviceId===pendingDeleteId ? {...link,serviceId:''}:link);
+      await saveServices(); await saveFooter(); fillGrids(); renderAdminServiceRows(); renderAdminFooterRows(); updateFooterServiceOptions(); renderFooter(); logUpdate('Removed service: '+(removed?removed.title:'')); showToast('Service removed.');
+    } else {
+      if(pendingDeleteKind==='footer'){
+        const removed = state.footer.find(link=>link.id===pendingDeleteId); state.footer = state.footer.filter(link=>link.id!==pendingDeleteId);
+        await saveFooter(); renderFooter(); renderAdminFooterRows(); logUpdate('Removed footer link: '+(removed?removed.text:'')); showToast('Footer link removed.');
+      } else {
+        const removed = state.inquiries.find(inquiry=>inquiry.id===pendingDeleteId);
+        try{
+          await db.collection('inquiries').doc(pendingDeleteId).delete();
+          state.inquiries = state.inquiries.filter(inquiry=>inquiry.id!==pendingDeleteId);
+          renderAdminInquiryRows();
+          logUpdate('Removed consultation inquiry from '+(removed?removed.name:''));
+          showToast('Inquiry removed.');
+        }catch(e){
+          console.error(e);
+          showToast('Failed to delete inquiry.');
+        }
+      }
+    }
+  }
+  document.getElementById('deleteModal').classList.remove('show'); pendingDeleteId=null;
+});
+
+function updateAdminStats(){
+  document.getElementById('statCeo').textContent = state.ceo.name && state.ceo.name!=='[CEO Name]' ? 'Configured' : 'Needs Setup';
+  document.getElementById('statTeam').textContent = state.team.filter(t=>t.active).length;
+}
+let updatesLog = [];
+function logUpdate(text){
+  updatesLog.unshift(text + ' · ' + new Date().toLocaleString());
+  updatesLog = updatesLog.slice(0,6);
+  document.getElementById('recentUpdates').innerHTML = updatesLog.map(u=>`<div style="padding:8px 0;border-bottom:1px solid var(--line);">${u}</div>`).join('');
+}
+document.getElementById('resetDataBtn').addEventListener('click', async ()=>{
+  state.ceo = {...DEFAULT_CEO}; state.team = JSON.parse(JSON.stringify(DEFAULT_TEAM)); state.services = JSON.parse(JSON.stringify(DEFAULT_SERVICES)); state.footer = JSON.parse(JSON.stringify(DEFAULT_FOOTER));
+  await saveCeo(); await saveTeam(); await saveServices(); await saveFooter();
+  fillGrids(); renderFooter(); renderCeo(); renderTeam(); renderAdminCeoForm(); renderAdminTeamRows(); renderAdminServiceRows(); renderAdminFooterRows(); updateFooterServiceOptions(); updateAdminStats();
+  showToast('Content reset to defaults.');
+});
+
+/* ============================================================
+   ADMIN: AUTH + NAV + SHOW/HIDE
+============================================================ */
+let adminAuthed = false;
+function openAdmin(){
+  document.getElementById('adminRoot').classList.add('show');
+  document.body.style.overflow='hidden';
+  if(adminAuthed){ showAdminApp(); } else { showAdminLogin(); }
+}
+function closeAdmin(){
+  document.getElementById('adminRoot').classList.remove('show');
+  document.body.style.overflow='';
+}
+function showAdminLogin(){ adminLoginView.style.display='block'; adminApp.style.display='none'; }
+function showAdminApp(){ adminLoginView.style.display='none'; adminApp.style.display='block'; }
+
+document.getElementById('adminEntry').addEventListener('click',(e)=>{e.preventDefault();openAdmin();});
+document.getElementById('adminExitTop').addEventListener('click',(e)=>{e.preventDefault();closeAdmin();});
+document.getElementById('adminExitTop2').addEventListener('click',(e)=>{e.preventDefault();closeAdmin();});
+document.getElementById('exitLink1').addEventListener('click',(e)=>{e.preventDefault();closeAdmin();});
+document.getElementById('exitLink2').addEventListener('click',(e)=>{e.preventDefault();closeAdmin();});
+document.getElementById('logoutBtn').addEventListener('click', async ()=>{ 
+  await auth.signOut(); 
+  adminAuthed=false; 
+  showAdminLogin(); 
+  document.getElementById('adminEmail').value=''; 
+  document.getElementById('adminPassword').value=''; 
+});
+
+document.getElementById('loginBtn').addEventListener('click', doLogin);
+document.getElementById('adminPassword').addEventListener('keydown',(e)=>{ if(e.key==='Enter') doLogin(); });
+function doLogin(){
+  const email = document.getElementById('adminEmail').value.trim();
+  const password = document.getElementById('adminPassword').value;
+  const loginBtn = document.getElementById('loginBtn');
+  const loginErr = document.getElementById('loginErr');
+  if(!email || !password){ loginErr.style.display='block'; loginErr.textContent='Enter both email and password.'; return; }
+  loginBtn.disabled = true;
+  loginBtn.textContent = 'Signing in...';
+  loginErr.style.display='none';
+  auth.signInWithEmailAndPassword(email, password).then((userCredential)=>{
+    adminAuthed = true;
+    loginBtn.disabled = false;
+    loginBtn.textContent = 'Sign In';
+    showAdminApp();
+  }).catch((error)=>{
+    console.error('Login error:', error);
+    loginBtn.disabled = false;
+    loginBtn.textContent = 'Sign In';
+    loginErr.style.display='block';
+    loginErr.textContent = 'Invalid email or password.';
+  });
+}
+
+document.querySelectorAll('.asnav').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.asnav').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.admin-view').forEach(v=>v.classList.remove('active'));
+    document.getElementById('view-'+btn.dataset.view).classList.add('active');
+  });
+});
+
+function showToast(msg){
+  const t = document.getElementById('toast'); t.textContent = msg;
+  t.classList.add('show'); setTimeout(()=>t.classList.remove('show'), 2600);
+}
+
+loadState();
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "name": "script-video-downloader",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:helper\" \"vite --host 0.0.0.0\"",
+    "helper": "tsx helper/index.ts",
+    "dev:api": "tsx watch server/index.ts",
+    "dev:helper": "tsx watch helper/index.ts",
+    "build": "tsc -b && vite build",
+    "build:server": "tsc -p tsconfig.node.json",
+    "lint": "oxlint src server helper",
+    "preview": "vite preview --host 0.0.0.0",
+    "helper:install": "node scripts/install-local-helper.mjs"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "concurrently": "^10.0.5",
+    "cors": "^2.8.6",
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "mammoth": "^1.13.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "uuid": "^14.0.2",
+    "wait-on": "^9.1.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.2"
+  }
+}

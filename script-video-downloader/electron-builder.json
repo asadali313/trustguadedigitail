@@ -1,0 +1,30 @@
+{
+  "appId": "com.scriptvideodownloader.app",
+  "productName": "Script Video Downloader",
+  "files": [
+    "dist/**/*",
+    "electron/**/*",
+    "package.json"
+  ],
+  "directories": {
+    "buildResources": "build",
+    "output": "release"
+  },
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "build/icon.ico"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "installerIcon": "build/icon.ico",
+    "uninstallerIcon": "build/icon.ico",
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true
+  }
+}
